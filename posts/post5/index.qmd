@@ -1,0 +1,10 @@
+---
+title: "Anomaly/Outlier Detection"
+author: "Britney Aiken"
+date: "2023-12-04"
+categories: [code, analysis]
+image: "anomaly.png"
+---
+
+This is a post with executable code.
+![](anomaly.png)
