@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://shai024.github.io/Blog-Project/posts/welcome/index.html</loc>
-    <lastmod>2023-12-05T05:08:51.171Z</lastmod>
+    <loc>https://shai024.github.io/Blog-Project/posts/post5/index.html</loc>
+    <lastmod>2023-12-05T05:59:04.183Z</lastmod>
   </url>
   <url>
-    <loc>https://shai024.github.io/Blog-Project/index.html</loc>
-    <lastmod>2023-12-05T05:08:50.219Z</lastmod>
+    <loc>https://shai024.github.io/Blog-Project/posts/post3/index.html</loc>
+    <lastmod>2023-12-05T05:59:03.355Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shai024.github.io/Blog-Project/posts/post1/index.html</loc>
+    <lastmod>2023-12-05T05:59:02.481Z</lastmod>
   </url>
   <url>
     <loc>https://shai024.github.io/Blog-Project/about.html</loc>
-    <lastmod>2023-12-05T05:08:49.263Z</lastmod>
+    <lastmod>2023-12-05T05:59:00.917Z</lastmod>
   </url>
   <url>
-    <loc>https://shai024.github.io/Blog-Project/posts/post-with-code/index.html</loc>
-    <lastmod>2023-12-05T05:08:50.705Z</lastmod>
+    <loc>https://shai024.github.io/Blog-Project/index.html</loc>
+    <lastmod>2023-12-05T05:59:01.990Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shai024.github.io/Blog-Project/posts/post2/index.html</loc>
+    <lastmod>2023-12-05T05:59:02.914Z</lastmod>
+  </url>
+  <url>
+    <loc>https://shai024.github.io/Blog-Project/posts/post4/index.html</loc>
+    <lastmod>2023-12-05T05:59:03.777Z</lastmod>
   </url>
 </urlset>
