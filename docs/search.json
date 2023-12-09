@@ -1,29 +1,15 @@
 [
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
+    "objectID": "posts/post5/index.html",
+    "href": "posts/post5/index.html",
+    "title": "Anomaly/Outlier Detection",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "This is a post with executable code."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "CS 5805 Blog Project",
-    "section": "",
-    "text": "Probability Theory and Random Variables\n\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nDec 4, 2023\n\n\nBritney Aiken\n\n\n\n\n\n\n  \n\n\n\n\nLinear and Nonlinear Regression\n\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nDec 4, 2023\n\n\nBritney Aiken\n\n\n\n\n\n\n  \n\n\n\n\nClassification\n\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nDec 4, 2023\n\n\nBritney Aiken\n\n\n\n\n\n\n  \n\n\n\n\nAnomaly/Outlier Detection\n\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nDec 4, 2023\n\n\nBritney Aiken\n\n\n\n\n\n\n  \n\n\n\n\nClustering\n\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\n\n\nDec 1, 2023\n\n\nBritney Aiken\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this blog"
-  },
-  {
-    "objectID": "posts/post-with-code/index.html",
-    "href": "posts/post-with-code/index.html",
-    "title": "Post With Code",
+    "objectID": "posts/post3/index.html",
+    "href": "posts/post3/index.html",
+    "title": "Linear and Nonlinear Regression",
     "section": "",
     "text": "This is a post with executable code."
   },
@@ -35,18 +21,25 @@
     "text": "This is a post with executable code."
   },
   {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "CS 5805 Blog Project",
+    "section": "",
+    "text": "Probability Theory and Random Variables\n\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nDec 4, 2023\n\n\nBritney Aiken\n\n\n\n\n\n\n  \n\n\n\n\nLinear and Nonlinear Regression\n\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nDec 4, 2023\n\n\nBritney Aiken\n\n\n\n\n\n\n  \n\n\n\n\nClassification\n\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nDec 4, 2023\n\n\nBritney Aiken\n\n\n\n\n\n\n  \n\n\n\n\nAnomaly/Outlier Detection\n\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nDec 4, 2023\n\n\nBritney Aiken\n\n\n\n\n\n\n  \n\n\n\n\nClustering\n\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\n\n\nDec 1, 2023\n\n\nBritney Aiken\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "posts/post2/index.html",
     "href": "posts/post2/index.html",
     "title": "Clustering",
     "section": "",
     "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
-  },
-  {
-    "objectID": "posts/post3/index.html",
-    "href": "posts/post3/index.html",
-    "title": "Linear and Nonlinear Regression",
-    "section": "",
-    "text": "This is a post with executable code."
   },
   {
     "objectID": "posts/post4/index.html",
@@ -56,10 +49,45 @@
     "text": "This is a post with executable code."
   },
   {
-    "objectID": "posts/post5/index.html",
-    "href": "posts/post5/index.html",
-    "title": "Anomaly/Outlier Detection",
-    "section": "",
-    "text": "This is a post with executable code."
+    "objectID": "posts/post4/index.html#data-classifcation-is-the-foundation-of-many-machine-learing-models.-data-classifcation-allows-us-to-make-informed-decisions-based-on-patterns-in-the-data.-in-this-blog-post-we-will-cover-the-importance-of-data-classifcation-various-classification-methods-and-the-metrics-used-to-evaluate-their-performance.",
+    "href": "posts/post4/index.html#data-classifcation-is-the-foundation-of-many-machine-learing-models.-data-classifcation-allows-us-to-make-informed-decisions-based-on-patterns-in-the-data.-in-this-blog-post-we-will-cover-the-importance-of-data-classifcation-various-classification-methods-and-the-metrics-used-to-evaluate-their-performance.",
+    "title": "Classification",
+    "section": "Data classifcation is the foundation of many machine learing models. Data classifcation allows us to make informed decisions based on patterns in the data. In this blog post, we will cover the importance of data classifcation, various classification methods, and the metrics used to evaluate their performance.",
+    "text": "Data classifcation is the foundation of many machine learing models. Data classifcation allows us to make informed decisions based on patterns in the data. In this blog post, we will cover the importance of data classifcation, various classification methods, and the metrics used to evaluate their performance."
+  },
+  {
+    "objectID": "posts/post4/index.html#what-is-data-classification-and-why-is-it-important-in-machine-learning",
+    "href": "posts/post4/index.html#what-is-data-classification-and-why-is-it-important-in-machine-learning",
+    "title": "Classification",
+    "section": "What is Data Classification and Why is it Important in Machine Learning?",
+    "text": "What is Data Classification and Why is it Important in Machine Learning?\nData classification is the process of organizing and labeling data into predefined categories or classes. The primary objective is to train a machine learning model to recognize patterns within the data and accurately assign new instances to the appropriate class. The importance of data classification in machine learning lies in its ability to enable intelligent decision-making. By categorizing data, models can generalize from past experiences to make predictions or classifications on new, unseen data. This capability forms the foundation for a wide array of applications that impact our daily lives."
+  },
+  {
+    "objectID": "posts/post4/index.html#binary-classifiers",
+    "href": "posts/post4/index.html#binary-classifiers",
+    "title": "Classification",
+    "section": "Binary Classifiers",
+    "text": "Binary Classifiers\nBinary classification involves categorizing instances into one of two classes. These classes are usually boolean values(true or false; yes or no, 0 or 1)."
+  },
+  {
+    "objectID": "posts/post4/index.html#performance-measures",
+    "href": "posts/post4/index.html#performance-measures",
+    "title": "Classification",
+    "section": "Performance Measures",
+    "text": "Performance Measures\nEvaluating the performance of a classifier is crucial to understand how well it generalizes to new, unseen data. Common performance measures include accuracy, precision, recall, F1 score, and the ROC-AUC curve. These metrics provide insights into the classifier’s strengths and weaknesses,"
+  },
+  {
+    "objectID": "posts/post4/index.html#multiclass-classification",
+    "href": "posts/post4/index.html#multiclass-classification",
+    "title": "Classification",
+    "section": "Multiclass Classification",
+    "text": "Multiclass Classification\nIn multiclass classification, instances are assigned to one of multiple classes. Unlike binary classification, where there are only two possible outcomes, multiclass scenarios involve distinguishing among multiple classes."
+  },
+  {
+    "objectID": "posts/post4/index.html#what-is-data-classification-why-is-it-important-in-machine-learning",
+    "href": "posts/post4/index.html#what-is-data-classification-why-is-it-important-in-machine-learning",
+    "title": "Classification",
+    "section": "What is Data Classification? Why is it Important in Machine Learning?",
+    "text": "What is Data Classification? Why is it Important in Machine Learning?\nData classification is the process of organizing and labeling data into predefined categories or classes. The primary objective is to train a machine learning model to recognize patterns within the data and accurately assign new instances to the appropriate class. The importance of data classification in machine learning lies in its ability to enable intelligent decision-making. By categorizing data, models can generalize from past experiences to make predictions or classifications on new, unseen data. This capability forms the foundation for a wide array of applications that impact our daily lives. conda update -n base -c defaults conda\n\n\nCode\n# Setup Scikit-Learn\nimport sys\nfrom packaging import version\nimport sklearn\n\n\n# Setup data visualization\nimport matplotlib.pyplot as plt\n\ndef plot_digit(image_data):\n    image = image_data.reshape(28, 28)\n    plt.imshow(image, cmap=\"binary\")\n    plt.axis(\"off\")\n\nplt.rc('font', size=14)\nplt.rc('axes', labelsize=14, titlesize=14)\nplt.rc('legend', fontsize=14)\nplt.rc('xtick', labelsize=10)\nplt.rc('ytick', labelsize=10)\n\n# Import the dataset\nfrom sklearn.datasets import fetch_openml\nmnist = fetch_openml('mnist_784', as_frame=False)\nX, y = mnist.data, mnist.target\n\n\n# Plot example data\nplt.figure(figsize=(9, 9))\nfor idx, image_data in enumerate(X[:100]):\n    plt.subplot(10, 10, idx + 1)\n    plot_digit(image_data)\nplt.subplots_adjust(wspace=0, hspace=0)\nplt.show()\n\n\nC:\\Users\\britn\\anaconda3\\Lib\\site-packages\\sklearn\\datasets\\_openml.py:1002: FutureWarning: The default value of `parser` will change from `'liac-arff'` to `'auto'` in 1.4. You can set `parser='auto'` to silence this warning. Therefore, an `ImportError` will be raised from 1.4 if the dataset is dense and pandas is not installed. Note that the pandas parser may return different data types. See the Notes Section in fetch_openml's API doc for details.\n  warn("
   }
 ]

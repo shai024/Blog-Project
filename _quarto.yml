@@ -13,8 +13,10 @@ website:
         href: https://twitter.com
 format:
   html:
-    theme: quartz
-    css: styles.css
+    theme: #pulse
+      light: pulse
+      dark: vapor
+    #css: [pulse, theme-dark.scss] #styles.css
 
 
 
