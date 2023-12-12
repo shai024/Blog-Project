@@ -73,9 +73,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -117,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="./about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+ <span class="menu-text">Britney Aiken</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/" rel="" target=""><i class="bi bi-github" role="img">
@@ -140,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
+    <div class="quarto-title column-page">
       <h1 class="title">CS 5805 Blog Project</h1>
                       </div>
   </div>
@@ -157,11 +157,9 @@ ul.task-list li input[type="checkbox"] {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="analysis">analysis <span class="quarto-category-count">(4)</span></div><div class="category" data-category="code">code <span class="quarto-category-count">(5)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
 
 
 
@@ -172,7 +170,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="code,analysis" data-listing-date-sort="1701666000000" data-listing-file-modified-sort="1702109269005" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="0" data-categories="code,analysis" data-listing-date-sort="1701666000000" data-listing-file-modified-sort="1702389752554" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
 <p><a href="./posts/post1/index.html"> <img src="./posts/post1/prob theory.jpg" class="thumbnail-image"> </a></p>
 </div>
@@ -184,18 +182,8 @@ Probability Theory and Random Variables
 <div class="listing-subtitle">
 
 </div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('analysis'); return false;">
-analysis
-</div>
-</div>
-<a href="./posts/post1/index.html">
 <div class="listing-description">
-This is a post with executable code. 
+
 </div>
 </a>
 </div>
@@ -210,7 +198,7 @@ Britney Aiken
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="code,analysis" data-listing-date-sort="1701666000000" data-listing-file-modified-sort="1701753918254" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="1" data-categories="code,analysis" data-listing-date-sort="1701666000000" data-listing-file-modified-sort="1702389766015" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
 <p><a href="./posts/post3/index.html"> <img src="./posts/post3/regression.jpg" class="thumbnail-image"> </a></p>
 </div>
@@ -222,18 +210,8 @@ Linear and Nonlinear Regression
 <div class="listing-subtitle">
 
 </div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('analysis'); return false;">
-analysis
-</div>
-</div>
-<a href="./posts/post3/index.html">
 <div class="listing-description">
-This is a post with executable code. 
+
 </div>
 </a>
 </div>
@@ -248,7 +226,7 @@ Britney Aiken
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="code,analysis" data-listing-date-sort="1701666000000" data-listing-file-modified-sort="1702125606362" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
+<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1701666000000" data-listing-file-modified-sort="1702390152065" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
 <div class="thumbnail">
 <p><a href="./posts/post4/index.html"> <img src="./posts/post4/classification.jpg" class="thumbnail-image"> </a></p>
 </div>
@@ -260,16 +238,6 @@ Classification
 <div class="listing-subtitle">
 
 </div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('analysis'); return false;">
-analysis
-</div>
-</div>
-<a href="./posts/post4/index.html">
 <div class="listing-description">
 This is a post with executable code. 
 </div>
@@ -286,7 +254,7 @@ Britney Aiken
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="code,analysis" data-listing-date-sort="1701666000000" data-listing-file-modified-sort="1701755619755" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="3" data-categories="code,analysis" data-listing-date-sort="1701666000000" data-listing-file-modified-sort="1702389776993" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
 <div class="thumbnail">
 <p><a href="./posts/post5/index.html"> <img src="./posts/post5/anomaly.png" class="thumbnail-image"> </a></p>
 </div>
@@ -298,18 +266,8 @@ Anomaly/Outlier Detection
 <div class="listing-subtitle">
 
 </div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('analysis'); return false;">
-analysis
-</div>
-</div>
-<a href="./posts/post5/index.html">
 <div class="listing-description">
-This is a post with executable code. 
+The objective is to learn what “normal” data looks like, and then use that to detect abnormal instances. These instances are called anomalies, or outliers, while the normal…
 </div>
 </a>
 </div>
@@ -324,9 +282,9 @@ Britney Aiken
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="code" data-listing-date-sort="1701406800000" data-listing-file-modified-sort="1701753490856" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1">
+<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1701406800000" data-listing-file-modified-sort="1702390004726" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
 <div class="thumbnail">
-<p><a href="./posts/post2/index.html"> <p class="card-img-top"><img src="posts\post2\clustering.png"  class="thumbnail-image card-img"/></p> </a></p>
+<p><a href="./posts/post2/index.html"> <img src="./posts/post2/clustering.png" class="thumbnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./posts/post2/index.html">
@@ -336,15 +294,8 @@ Clustering
 <div class="listing-subtitle">
 
 </div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('code'); return false;">
-code
-</div>
-</div>
-<a href="./posts/post2/index.html">
 <div class="listing-description">
-This is the first post in a Quarto blog. Welcome!
+ ### Whether you’re a seasoned data scientist or a curious enthusiast, understanding the…
 </div>
 </a>
 </div>

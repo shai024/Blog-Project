@@ -4,42 +4,28 @@
     "href": "posts/post5/index.html",
     "title": "Anomaly/Outlier Detection",
     "section": "",
-    "text": "This is a post with executable code."
-  },
-  {
-    "objectID": "posts/post3/index.html",
-    "href": "posts/post3/index.html",
-    "title": "Linear and Nonlinear Regression",
-    "section": "",
-    "text": "This is a post with executable code."
-  },
-  {
-    "objectID": "posts/post1/index.html",
-    "href": "posts/post1/index.html",
-    "title": "Probability Theory and Random Variables",
-    "section": "",
-    "text": "This is a post with executable code."
+    "text": "The objective is to learn what “normal” data looks like, and then use that to detect abnormal instances. These instances are called anomalies, or outliers, while the normal instances are called inliers. Anomaly detection is useful in a wide variety of applications, such as fraud detection, detecting defective products in manufacturing, identifying new trends in time series, or removing outliers from a dataset before training another model, which can significantly improve the performance of the resulting model."
   },
   {
     "objectID": "about.html",
     "href": "about.html",
-    "title": "About",
+    "title": "Britney Aiken",
     "section": "",
-    "text": "About this blog"
+    "text": "Virginia Tech M.Eng Computer Science Student"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "CS 5805 Blog Project",
     "section": "",
-    "text": "Probability Theory and Random Variables\n\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nDec 4, 2023\n\n\nBritney Aiken\n\n\n\n\n\n\n  \n\n\n\n\nLinear and Nonlinear Regression\n\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nDec 4, 2023\n\n\nBritney Aiken\n\n\n\n\n\n\n  \n\n\n\n\nClassification\n\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nDec 4, 2023\n\n\nBritney Aiken\n\n\n\n\n\n\n  \n\n\n\n\nAnomaly/Outlier Detection\n\n\n\n\n\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\n\n\nDec 4, 2023\n\n\nBritney Aiken\n\n\n\n\n\n\n  \n\n\n\n\nClustering\n\n\n\n\n\n\n\ncode\n\n\n\n\n\n\n\n\n\n\n\nDec 1, 2023\n\n\nBritney Aiken\n\n\n\n\n\n\nNo matching items"
+    "text": "Probability Theory and Random Variables\n\n\n\n\n\n\n\n\n\n\n\n\nDec 4, 2023\n\n\nBritney Aiken\n\n\n\n\n\n\n  \n\n\n\n\nLinear and Nonlinear Regression\n\n\n\n\n\n\n\n\n\n\n\n\nDec 4, 2023\n\n\nBritney Aiken\n\n\n\n\n\n\n  \n\n\n\n\nClassification\n\n\n\n\n\n\n\n\n\n\n\n\nDec 4, 2023\n\n\nBritney Aiken\n\n\n\n\n\n\n  \n\n\n\n\nAnomaly/Outlier Detection\n\n\n\n\n\n\n\n\n\n\n\n\nDec 4, 2023\n\n\nBritney Aiken\n\n\n\n\n\n\n  \n\n\n\n\nClustering\n\n\n\n\n\n\n\n\n\n\n\n\nDec 1, 2023\n\n\nBritney Aiken\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post2/index.html",
     "href": "posts/post2/index.html",
     "title": "Clustering",
     "section": "",
-    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "### Whether you’re a seasoned data scientist or a curious enthusiast, understanding the basics of clustering algorithms can open doors to a deeper comprehension of how data organizes itself. In this post, we will cover cluersting algorithms and their applications.\n\nWhat is clustering?\nData clustering is a method used in machine learning to organize large datasets into distinct groups or clusters. The goal is to group data points based on similarities and reveal patterns that might not be obvious at first.\n\n\nHow is clustering used?\nClustering is used in a wide variety of applications, including:\nCustomer Segmentation: Identifying groups of customers with similar preferences helps businesses tailor marketing strategies more effectively.\nImage and Signal Processing: Grouping similar pixels in an image or patterns in signals aids in image recognition and signal analysis.\nAnomaly Detection: Detecting unusual patterns or outliers in a dataset, which can be indicative of errors or potential threats.\nBiology and Genetics: Classifying genes based on similar expressions or grouping biological specimens for research purposes.\nDocument Clustering and Search Engines: Organizing large document collections by topic or theme for efficient information retrieval.\n\n\nK-Means Algorithm\nK-Means clustering is an unsupervised machine learning algorithm used to organize a dataset into distinct clusters. It is a simple algorithm with the folowing steps:\n\nInitialize: Randomly select k data points/instances as initial centroids.\nAssign: Calculate the distance of each data point/instance to each centroids and assign each point (the instance label) to the cluster with the nearest centroid.\nUpdate: Recalculate the mean of the data points in each cluster and update the centroids.\nRepeat: Iterate through steps 2 and 3 until the centroids stabilize.\n\n\nAdvanatages and Limitations\nThe simplicity of K-means makes it efficient and capable of handling large datasets. It also scales well as the number of data points grows. However, there are some limitations. The algorithm is guaranteed to converge, but it might not converge to the right solution. The outcome is influenced by the centroids that were randomly chosen during the initialization step. Moreover, k-means does not behave very well when the clusters have varying sizes, different densities, or nonspherical shapes.\n\n\nImprovements\nOne imrovement to limit the influence of the inintial centroids is to run the algorithm multiple times with different initializations and keep the best one. The best solution is determined by the model’s inertia (the sum of the squared distances between the instances and their closest centroids). A lower interia means a better model.\nAnother improvement, k-means++, selects centroids that are far from one another to lessen the likelyhood that the algortithm converges to a suboptimal solution. This improvement drastically reduces the number of times the algorithm needs to be run to find the optimal solution.\nA third improvement by Charles Elkan accelerates the algorithm by avoiding many unnecessary distance calculations. Howver, depending on the dataset, this implementation may actually slow down the trainig instead of mkaing it faster.\nA fourth improvement by David Sculley uses mini-batches instead of the full dataset at each iteration. This method makes it possible to cluster datasets that do not fit in memory.\n\n\nHow to determine the number of clusters\nTo determine the optimal number of clusters (k), we use the silhouette score. An instance’s silhouette score is equal to (b – a) / max(a, b), where a is the mean distance to the other instances in the same cluster and b is the mean nearest-cluster distance. The silhouette score can ranges between –1 and +1. A score close to +1 means that the instance is well inside its own cluster and far from other clusters, while a score close to 0 means that it is close to a cluster boundary. A score close to –1 means that the instance may have been assigned to the wrong cluster.\n\n\n\nDBSCAN\nDBSCAN (Density-Based Spatial Clustering of Applications with Noise) is a another clustering algorithm. It identifies clusters in a dataset based on the density of the data points. Unlike K-Means, DBSCAN doesn’t require specifying the number of clusters beforehand and is better suited for irregularly shaped clusters. The algorithm classifies datapoints as core, border, or noise.\nCore Points: A data point that has at least the minimum number of data points within a defined radius (a neighborhood). All data points in the neighborhood belong to the same cluster.\nBorder Points: A data point that is within the neighborhood of a core point but does not have enough neighbors to be considered a core point.\nNoise Points: Data points that are neither core points or border points.\n\nAdvanatages and Limitations\nDBSCAN is capable of identifying any number of clusters of any shape, and it is not senistive to outliers. However, if the density varies significantly across the clusters, or if there’s no low-density region around the clusters, DBSCAN may struggle to identify the clusters. This algorithm also does not scale well to large datasets."
   },
   {
     "objectID": "posts/post4/index.html",
