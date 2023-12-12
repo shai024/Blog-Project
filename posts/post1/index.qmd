@@ -6,5 +6,4 @@ categories: [code, analysis]
 image: "prob theory.jpg"
 ---
 
-This is a post with executable code.
 ![](prob theory.jpg)

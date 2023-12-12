@@ -22,6 +22,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -86,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
     <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">About</span></a>
+ <span class="menu-text">Britney Aiken</span></a>
   </li>  
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/" rel="" target=""><i class="bi bi-github" role="img">
@@ -110,11 +144,8 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Clustering</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">code</div>
-              </div>
-                  </div>
+      <div class="quarto-title-block"><div><h1 class="title">Clustering</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+                      </div>
   </div>
     
   
@@ -148,11 +179,60 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>This is the first post in a Quarto blog. Welcome!</p>
-<p><img src="clustering.png" class="img-fluid"></p>
-<p>Since this post doesn’t specify an explicit <code>image</code>, the first image in the post will be used in the listing page of posts.</p>
+<p><img src="clustering.png" class="img-fluid"> ### Whether you’re a seasoned data scientist or a curious enthusiast, understanding the basics of clustering algorithms can open doors to a deeper comprehension of how data organizes itself. In this post, we will cover cluersting algorithms and their applications.</p>
+<section id="what-is-clustering" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-clustering">What is clustering?</h3>
+<p>Data clustering is a method used in machine learning to organize large datasets into distinct groups or clusters. The goal is to group data points based on similarities and reveal patterns that might not be obvious at first.</p>
+</section>
+<section id="how-is-clustering-used" class="level3">
+<h3 class="anchored" data-anchor-id="how-is-clustering-used">How is clustering used?</h3>
+<p>Clustering is used in a wide variety of applications, including:</p>
+<p><strong>Customer Segmentation:</strong> Identifying groups of customers with similar preferences helps businesses tailor marketing strategies more effectively.</p>
+<p><strong>Image and Signal Processing:</strong> Grouping similar pixels in an image or patterns in signals aids in image recognition and signal analysis.</p>
+<p><strong>Anomaly Detection:</strong> Detecting unusual patterns or outliers in a dataset, which can be indicative of errors or potential threats.</p>
+<p><strong>Biology and Genetics:</strong> Classifying genes based on similar expressions or grouping biological specimens for research purposes.</p>
+<p><strong>Document Clustering and Search Engines:</strong> Organizing large document collections by topic or theme for efficient information retrieval.</p>
+</section>
+<section id="k-means-algorithm" class="level3">
+<h3 class="anchored" data-anchor-id="k-means-algorithm">K-Means Algorithm</h3>
+<p>K-Means clustering is an unsupervised machine learning algorithm used to organize a dataset into distinct clusters. It is a simple algorithm with the folowing steps:</p>
+<ol type="1">
+<li><strong>Initialize:</strong> Randomly select <code>k</code> data points/instances as initial centroids.</li>
+<li><strong>Assign:</strong> Calculate the distance of each data point/instance to each centroids and assign each point (the instance label) to the cluster with the nearest centroid.</li>
+<li><strong>Update:</strong> Recalculate the mean of the data points in each cluster and update the centroids.</li>
+<li><strong>Repeat:</strong> Iterate through steps 2 and 3 until the centroids stabilize.</li>
+</ol>
+<section id="advanatages-and-limitations" class="level4">
+<h4 class="anchored" data-anchor-id="advanatages-and-limitations">Advanatages and Limitations</h4>
+<p>The simplicity of K-means makes it efficient and capable of handling large datasets. It also scales well as the number of data points grows. However, there are some limitations. The algorithm is guaranteed to converge, but it might not converge to the right solution. The outcome is influenced by the centroids that were randomly chosen during the initialization step. Moreover, k-means does not behave very well when the clusters have varying sizes, different densities, or nonspherical shapes.</p>
+</section>
+<section id="improvements" class="level4">
+<h4 class="anchored" data-anchor-id="improvements">Improvements</h4>
+<p>One imrovement to limit the influence of the inintial centroids is to run the algorithm multiple times with different initializations and keep the best one. The best solution is determined by the model’s <code>inertia</code> (the sum of the squared distances between the instances and their closest centroids). A lower interia means a better model.</p>
+<p>Another improvement, k-means++, selects centroids that are far from one another to lessen the likelyhood that the algortithm converges to a suboptimal solution. This improvement drastically reduces the number of times the algorithm needs to be run to find the optimal solution.</p>
+<p>A third improvement by Charles Elkan accelerates the algorithm by avoiding many unnecessary distance calculations. Howver, depending on the dataset, this implementation may actually slow down the trainig instead of mkaing it faster.</p>
+<p>A fourth improvement by David Sculley uses mini-batches instead of the full dataset at each iteration. This method makes it possible to cluster datasets that do not fit in memory.</p>
+</section>
+<section id="how-to-determine-the-number-of-clusters" class="level4">
+<h4 class="anchored" data-anchor-id="how-to-determine-the-number-of-clusters">How to determine the number of clusters</h4>
+<p>To determine the optimal number of clusters (<code>k</code>), we use the silhouette score. An instance’s silhouette score is equal to <code>(b – a) / max(a, b)</code>, where <code>a</code> is the mean distance to the other instances in the same cluster and <code>b</code> is the mean nearest-cluster distance. The silhouette score can ranges between –1 and +1. A score close to +1 means that the instance is well inside its own cluster and far from other clusters, while a score close to 0 means that it is close to a cluster boundary. A score close to –1 means that the instance may have been assigned to the wrong cluster.</p>
+</section>
+</section>
+<section id="dbscan" class="level3">
+<h3 class="anchored" data-anchor-id="dbscan">DBSCAN</h3>
+<p>DBSCAN (Density-Based Spatial Clustering of Applications with Noise) is a another clustering algorithm. It identifies clusters in a dataset based on the density of the data points. Unlike K-Means, DBSCAN doesn’t require specifying the number of clusters beforehand and is better suited for irregularly shaped clusters. The algorithm classifies datapoints as core, border, or noise.</p>
+<p><strong>Core Points:</strong> A data point that has at least the minimum number of data points within a defined radius (a neighborhood). All data points in the neighborhood belong to the same cluster.</p>
+<p><strong>Border Points:</strong> A data point that is within the neighborhood of a core point but does not have enough neighbors to be considered a core point.</p>
+<p><strong>Noise Points:</strong> Data points that are neither core points or border points.</p>
+<section id="advanatages-and-limitations-1" class="level4">
+<h4 class="anchored" data-anchor-id="advanatages-and-limitations-1">Advanatages and Limitations</h4>
+<p>DBSCAN is capable of identifying any number of clusters of any shape, and it is not senistive to outliers. However, if the density varies significantly across the clusters, or if there’s no low-density region around the clusters, DBSCAN may struggle to identify the clusters. This algorithm also does not scale well to large datasets.</p>
 
 
+<!-- -->
+
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -349,6 +429,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
   function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
@@ -502,7 +633,89 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Clustering"</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Britney Aiken"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2023-12-01"</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "clustering.png"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">code-fold:</span><span class="co"> true</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="an">code-tools:</span><span class="co"> true</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="an">code-block-bg:</span><span class="co"> true</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="an">code-block-border-left:</span><span class="co"> "#31BAE9"</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="al">![](clustering.png)</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">### Whether you're a seasoned data scientist or a curious enthusiast, understanding the basics of clustering algorithms can open doors to a deeper comprehension of how data organizes itself. In this post, we will cover cluersting algorithms and their applications. </span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">### What is clustering? </span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Data clustering is a method used in machine learning to organize large datasets into distinct groups or clusters. The goal is to group data points based on similarities and reveal patterns that might not be obvious at first. </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fu">### How is clustering used?</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>Clustering is used in a wide variety of applications, including:</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>**Customer Segmentation:**</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>Identifying groups of customers with similar preferences helps businesses tailor marketing strategies more effectively.</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>**Image and Signal Processing:**</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Grouping similar pixels in an image or patterns in signals aids in image recognition and signal analysis.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>**Anomaly Detection:**</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>Detecting unusual patterns or outliers in a dataset, which can be indicative of errors or potential threats.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>**Biology and Genetics:**</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>Classifying genes based on similar expressions or grouping biological specimens for research purposes.</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>**Document Clustering and Search Engines:**</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>Organizing large document collections by topic or theme for efficient information retrieval.</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="fu">### K-Means Algorithm</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>K-Means clustering is an unsupervised machine learning algorithm used to organize a dataset into distinct clusters. </span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>It is a simple algorithm with the folowing steps:</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Initialize:** Randomly select <span class="in">`k`</span> data points/instances as initial centroids.</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>**Assign:** Calculate the distance of each data point/instance to each centroids and assign each point (the instance label) to the cluster with the nearest centroid.</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>**Update:** Recalculate the mean of the data points in each cluster and update the centroids.</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>**Repeat:** Iterate through steps 2 and 3 until the centroids stabilize.</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Advanatages and Limitations</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>The simplicity of K-means makes it efficient and capable of handling large datasets. It also scales well as the number of data points grows. </span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>However, there are some limitations. The algorithm is guaranteed to converge, but it might not converge to the right solution. The outcome is influenced by the centroids that were randomly chosen during the initialization step. Moreover, k-means does not behave very well when the clusters have varying sizes, different densities, or nonspherical shapes. </span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Improvements</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>One imrovement to limit the influence of the inintial centroids is to run the algorithm multiple times with different initializations and keep the best one. The best solution is determined by the model's <span class="in">`inertia`</span> (the sum of the squared distances between the instances and their closest centroids). A lower interia means a better model. </span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>Another improvement, k-means++, selects centroids that are far from one another to lessen the likelyhood that the algortithm converges to a suboptimal solution. This improvement drastically reduces the number of times the algorithm needs to be run to find the optimal solution. </span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>A third improvement by Charles Elkan accelerates the algorithm by avoiding many unnecessary distance calculations. Howver, depending on the dataset, this implementation may actually slow down the trainig instead of mkaing it faster. </span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>A fourth improvement by David Sculley uses mini-batches instead of the full dataset at each iteration. This method makes it possible to cluster  datasets that do not fit in memory. </span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="fu">#### How to determine the number of clusters</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>To determine the optimal number of clusters (<span class="in">`k`</span>), we use the silhouette score. An instance’s silhouette score is equal to <span class="in">`(b – a) / max(a, b)`</span>, where <span class="in">`a`</span> is the mean distance to the other instances in the same cluster and <span class="in">`b`</span> is the mean nearest-cluster distance. The silhouette score can ranges between –1 and +1. A score close to +1 means that the instance is well inside its own cluster and far from other clusters, while a score close to 0 means that it is close to a cluster boundary. A score close to –1 means that the instance may have been assigned to the wrong cluster.</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="fu">### DBSCAN</span></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>DBSCAN (Density-Based Spatial Clustering of Applications with Noise) is a another clustering algorithm. It identifies clusters in a dataset based on the density of the data points. Unlike K-Means, DBSCAN doesn't require specifying the number of clusters beforehand and is better suited for irregularly shaped clusters. The algorithm classifies datapoints as core, border, or noise. </span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>**Core Points:**</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>A data point that has at least the minimum number of data points within a defined radius (a neighborhood). All data points in the neighborhood belong to the same cluster.</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>**Border Points:**</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>A data point that is within the neighborhood of a core point but does not have enough neighbors to be considered a core point.</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>**Noise Points:**</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>Data points that are neither core points or border points.</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Advanatages and Limitations</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>DBSCAN is capable of identifying any number of clusters of any shape, and it is not senistive to outliers. However, if the density varies significantly across the clusters, or if there’s no low-density region around the clusters, DBSCAN may struggle to identify the clusters. This algorithm also does not scale well to large datasets.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 
 

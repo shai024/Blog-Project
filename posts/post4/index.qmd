@@ -2,7 +2,6 @@
 title: "Classification"
 author: "Britney Aiken"
 date: "2023-12-04"
-categories: [code, analysis]
 image: "classification.jpg"
 code-fold: true
 code-tools: true
@@ -10,15 +9,11 @@ code-block-bg: true
 code-block-border-left: "#31BAE9"
 ---
 
-This is a post with executable code.
-![](classification.jpg)
+![Data classifcation is the foundation of many machine learing models. Data classifcation allows us to make informed decisions based on patterns in the data. In this blog post, we will cover the importance of data classifcation, various classification methods, and the metrics used to evaluate their performance.](classification.jpg)
 
 
-## Data classifcation is the foundation of many machine learing models. Data classifcation allows us to make informed decisions based on patterns in the data. In this blog post, we will cover the importance of data classifcation, various classification methods, and the metrics used to evaluate their performance.
-
-
-## What is Data Classification? Why is it Important in Machine Learning?
-Data classification is the process of organizing and labeling data into predefined categories or classes. The primary objective is to train a machine learning model to recognize patterns within the data and accurately assign new instances to the appropriate class. The importance of data classification in machine learning lies in its ability to enable intelligent decision-making. By categorizing data, models can generalize from past experiences to make predictions or classifications on new, unseen data. This capability forms the foundation for a wide array of applications that impact our daily lives.
+### What is Data Classification? Why is it Important in Machine Learning?
+Data classification is the process of organizing and labeling data into predefined categories or classes. The goal is to train a machine learning model to recognize patterns within the data and accurately assign new instances to the appropriate class. The importance of data classification in machine learning lies in its ability to enable intelligent decision-making. By categorizing data, models can generalize from past experiences to make predictions or classifications on new, unseen data. This capability forms the foundation for a wide array of applications that impact our daily lives.
 
 
 ```{python}
@@ -60,11 +55,11 @@ plt.show()
 
 ```
 
-## Binary Classifiers
+### Binary Classifiers
 Binary classification involves categorizing instances into one of two classes. These classes are usually boolean values(true or false; yes or no, 0 or 1). 
 
-## Performance Measures
+### Performance Measures
 Evaluating the performance of a classifier is crucial to understand how well it generalizes to new, unseen data. Common performance measures include accuracy, precision, recall, F1 score, and the ROC-AUC curve. These metrics provide insights into the classifier's strengths and weaknesses,
 
-## Multiclass Classification
+### Multiclass Classification
 In multiclass classification, instances are assigned to one of multiple classes. Unlike binary classification, where there are only two possible outcomes, multiclass scenarios involve distinguishing among multiple classes.

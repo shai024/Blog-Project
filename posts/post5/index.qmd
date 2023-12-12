@@ -6,5 +6,7 @@ categories: [code, analysis]
 image: "anomaly.png"
 ---
 
-This is a post with executable code.
 ![](anomaly.png)
+
+
+The objective is to learn what “normal” data looks like, and then use that to detect abnormal instances. These instances are called anomalies, or outliers, while the normal instances are called inliers. Anomaly detection is useful in a wide variety of applications, such as fraud detection, detecting defective products in manufacturing, identifying new trends in time series, or removing outliers from a dataset before training another model, which can significantly improve the performance of the resulting model.

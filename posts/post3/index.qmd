@@ -6,5 +6,4 @@ categories: [code, analysis]
 image: "regression.jpg"
 ---
 
-This is a post with executable code.
 ![](regression.jpg)
