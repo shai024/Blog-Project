@@ -7,20 +7,6 @@
     "text": "The objective is to learn what “normal” data looks like, and then use that to detect abnormal instances. These instances are called anomalies, or outliers, while the normal instances are called inliers. Anomaly detection is useful in a wide variety of applications, such as fraud detection, detecting defective products in manufacturing, identifying new trends in time series, or removing outliers from a dataset before training another model, which can significantly improve the performance of the resulting model."
   },
   {
-    "objectID": "posts/post3/index.html",
-    "href": "posts/post3/index.html",
-    "title": "Linear and Nonlinear Regression",
-    "section": "",
-    "text": "This is a post with executable code."
-  },
-  {
-    "objectID": "posts/post1/index.html",
-    "href": "posts/post1/index.html",
-    "title": "Probability Theory and Random Variables",
-    "section": "",
-    "text": "This is a post with executable code."
-  },
-  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "Britney Aiken",
