@@ -9,14 +9,13 @@ website:
       - about.qmd
       - icon: github
         href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+      - icon: linkedin
+        href: https://www.linkedin.com/in/britney-aiken-929373185/
 format:
   html:
-    theme: #pulse
+    theme:
       light: pulse
       dark: vapor
-    #css: [pulse, theme-dark.scss] #styles.css
 
 
 
