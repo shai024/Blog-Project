@@ -748,7 +748,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="fu">### Types of Regression</span></span>
 <span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Linear Regression</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>A linear regression model makes a prediction by simply computing a weighted sum of the input features, plus a constant called the bias term (also called the intercept term).  The relationship is modeled as a straight line.</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>A linear regression model makes a prediction by calculating a weighted sum of the input features, plus a constant called the bias term. The relationship is modeled as a straight line.</span>
 <span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
 <span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -786,7 +786,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Polynomial Regression</span></span>
-<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>Allows for more complex relationships by introducing polynomial terms into the regression equation. This is particularly useful when the relationship between variables is nonlinear.</span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>Polynomial regression allows for more complex relationships by adding polynomial terms into the regression equation. </span>
 <span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
@@ -828,7 +828,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a>Ridge and Lasso regression are variations of linear regression that include regularization terms to prevent overfitting. Ridge regression adds a penalty term to the squared magnitude of coefficients, while Lasso regression adds a penalty term to the absolute magnitude.</span>
 <span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Elastic Net Regression</span></span>
-<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a>Elastic net regression is a middle ground between ridge regression and lasso regression. The regularization term is a weighted sum of both ridge and lasso’s regularization terms, and you can control the mix ratio <span class="in">`r`</span>. When <span class="in">`r = 0`</span>, elastic net is equivalent to ridge regression, and when <span class="in">`r = 1`</span>, it is equivalent to lasso regression</span>
+<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a>Elastic Net regression is a compromise between ridge regression and lasso regression. The regularization term is a weighted sum of both ridge and lasso’s regularization terms. You can control the mix ratio <span class="in">`r`</span>. When <span class="in">`r = 0`</span>, elastic net is equivalent to ridge regression, and when <span class="in">`r = 1`</span>, it is equivalent to lasso regression.</span>
 <span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Logistic Regression</span></span>
 <span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a>Logistic regression is used to estimate the probability that an instance belongs to a particular class. If the estimated probability is greater than a given threshold, then the model predicts that the instance belongs to that class. This makes it a binary classifier. Similar to a linear regression model, a logistic regression model calculates the weighted sum of the input features, but instead of returning the result, it rturns the logistic of the result.</span>
@@ -854,7 +854,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a>The algorith improves gradually, taking one step at a time. The size of the steps is determined by the learning rate. If the learning rate is too small, the algorithm will take a long time to converge. If the learning rate is too high, the algorithm will miss key patterns in the data. </span>
 <span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a><span class="fu">### Early Stopping</span></span>
-<span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a>Polynomial regression algorithms use a technique called Early Stopping to prevent overfitting. As an algorithm learns, its prediction error (RMSE) goes down. After a while, though, the validation error starts to go back up. This indicates that the model has started to overfit the data. With early stopping, you stop training as soon as the validation error reaches the minimum.</span>
+<span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a>Polynomial regression algorithms use a technique called Early Stopping to prevent overfitting. As an algorithm learns, its prediction  and validation errors goes down. But after a while, the validation error will start to go back up. This indicates that the model is starting to overfit the data. With early stopping, you stop training as soon as the validation error reaches the minimum.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
