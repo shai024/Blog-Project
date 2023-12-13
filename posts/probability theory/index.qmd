@@ -1,0 +1,49 @@
+---
+title: "Probability Theory and Random Variables"
+author: "Britney Aiken"
+date: "2023-12-04"
+image: "prob theory.jpg"
+code-fold: true
+code-tools: true
+code-block-bg: true
+code-block-border-left: "#31BAE9"
+---
+
+![Probability theory and random variables provide the mathematical framework for understanding uncertainty, variability, and making informed predictions.](prob theory.jpg)
+
+### What is Probability Theory?
+Probability theory is a branch of mathematics that deals with the quantification of uncertainty. It is used to model the uncertainty inherent when making predictions about data. 
+
+
+### What are Random Variables?
+Random variables represent the set of possible outcomes of a random event. There are two types of random variables:
+
+**Discrete Random Variables:**
+Discrete random variables represent a set number of distinct values. Examples include tossing a coin (heads or tails), or rolling dice (1,2,3,4,5,6). 
+
+**Continuous Random Variables:**
+Continuous random represent an infinite number of possible values. Examples include the height of individuals, the temperature, or time. 
+
+Each random variable is associated with a probability distribution, which describes the likelihood of the random variable taking on different values.
+
+### Probability Distributions
+A probability distribution describes how the probabilities are spread across different values of a random variable.
+
+**Uniform Distribution:**
+Assigns equal probability to all possible outcomes. This is used when we do not know the likelihood of different values.
+
+**Normal Distribution:**
+The probability density of a normal distribution (also known as the Gaussian distribution) looks like a bell-shaped curve. This curve reaches its peak at the mean and gradually decreases as values move away from the mean. Many algorithms assume that the data follows a normal distribution.
+
+### Applications in Machine Learning
+**Bayesian Inference:**
+Probability theory supports Bayesian methods, where probabilities are assigned to hypotheses, and the model is updated based on observed evidence.
+
+**Uncertainty Quantification:**
+Probability theory helps quantify the uncertainty of a machine learing prediction. This can be used to analyze a model's performance. 
+
+**Statistical Inference:**
+Probability distributions and random variables are essential in hypothesis testing, parameter estimation, and drawing conclusions about populations from sample data.
+
+**Monte Carlo Methods:**
+Monte Carlo techniques rely on random sampling to estimate solutions to complex problems. 

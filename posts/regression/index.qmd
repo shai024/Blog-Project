@@ -1,0 +1,60 @@
+---
+title: "Linear and Nonlinear Regression"
+author: "Britney Aiken"
+date: "2023-12-04"
+image: "regression.jpg"
+code-fold: true
+code-tools: true
+code-block-bg: true
+code-block-border-left: "#31BAE9"
+---
+
+![Regression is used in many fields, including finance, economics, biology, and engineering. The goal is to predict a continuous outcome on historical or observed data.](regression.jpg)
+
+
+### What is regresssion? 
+Regression is a type of supervised learning task where the goal is to predict a continuous variable based on the input features. In other words, regression models are designed to establish a relationship between the input features and the target variable.
+
+**Target Variable (Dependent Variable):** a continuous numeric value that the model tries to estimate.
+
+**Input Features (Independent Variables):** the model learns how these features relate to the target variable during the training process.
+
+### Types of Regression
+
+#### Linear Regression
+A linear regression model makes a prediction by simply computing a weighted sum of the input features, plus a constant called the bias term (also called the intercept term).  The relationship is modeled as a straight line.
+
+#### Polynomial Regression
+Allows for more complex relationships by introducing polynomial terms into the regression equation. This is particularly useful when the relationship between variables is nonlinear.
+
+#### Ridge Regression and Lasso Regression
+Ridge and Lasso regression are variations of linear regression that include regularization terms to prevent overfitting. Ridge regression adds a penalty term to the squared magnitude of coefficients, while Lasso regression adds a penalty term to the absolute magnitude.
+
+#### Elastic Net Regression
+Elastic net regression is a middle ground between ridge regression and lasso regression. The regularization term is a weighted sum of both ridge and lasso’s regularization terms, and you can control the mix ratio `r`. When `r = 0`, elastic net is equivalent to ridge regression, and when `r = 1`, it is equivalent to lasso regression
+
+#### Logistic Regression
+Logistic regression is used to estimate the probability that an instance belongs to a particular class. If the estimated probability is greater than a given threshold, then the model predicts that the instance belongs to that class. This makes it a binary classifier. Similar to a linear regression model, a logistic regression model calculates the weighted sum of the input features, but instead of returning the result, it rturns the logistic of the result.
+
+#### Softmax Regression
+Softmax regression is a generalization of logistic regression to support multiple classes without having to train and combine multiple binary classifiers. The algorithm computes a score for each class, estimates the probability that an instance belongs to the class, and predicts the class with the highest probability. 
+
+### Performance Metrics
+**Mean Squared Error (MSE):** Measures the average squared difference between predicted and true values. This is used to assessing the accuracy of a model.
+
+**Mean Absolute Error (MAE):** Measures the average absolute difference between predicted and true values. It is less sensitive to outliers than MSE.
+
+**R-squared (R²):** Represents the proportion of the variance in the target variable that is predictable from the input features. Ranges from 0 to 1, where 1 indicates a perfect fit.
+
+### Gradient Descent
+Gradient Descent is an optimization algorithm used to minimize a cost function by adjusting the weights of a model. The algorithm follows these steps:
+
+1. Start with random values for the model parameters. 
+2. Calculate the gradient of the cost function. The gradient indicates the direction of the steepest increase
+3. Adjust the model parameters in the opposite direction of the gradient to decrease the cost function.
+4. Repeat steps 2 and 3 until the algorithm converges to a minimum
+
+The algorith improves gradually, taking one step at a time. The size of the steps is determined by the learning rate. If the learning rate is too small, the algorithm will take a long time to converge. If the learning rate is too high, the algorithm will miss key patterns in the data. 
+
+### Early Stopping
+Polynomial regression algorithms use a technique called Early Stopping to prevent overfitting. As an algorithm learns, its prediction error (RMSE) goes down. After a while, though, the validation error starts to go back up. This indicates that the model has started to overfit the data. With early stopping, you stop training as soon as the validation error reaches the minimum.

@@ -1,9 +1,0 @@
----
-title: "Linear and Nonlinear Regression"
-author: "Britney Aiken"
-date: "2023-12-04"
-categories: [code, analysis]
-image: "regression.jpg"
----
-
-![](regression.jpg)

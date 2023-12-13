@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Britney Aiken">
+<meta name="dcterms.date" content="2023-12-04">
 
-<title>Blog Project - CS 5805 Blog Project</title>
+<title>Blog Project - Linear and Nonlinear Regression</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +25,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -63,49 +63,18 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Blog Project</span>
     </a>
   </div>
@@ -116,7 +85,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">Britney Aiken</span></a>
   </li>  
   <li class="nav-item compact">
@@ -140,181 +109,110 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page">
-      <h1 class="title">CS 5805 Blog Project</h1>
-                      </div>
+    <div class="quarto-title column-body">
+      <h1 class="title">Linear and Nonlinear Regression</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">code</div>
+                <div class="quarto-category">analysis</div>
+              </div>
+                  </div>
   </div>
     
   
   <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Britney Aiken </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">December 4, 2023</p>
+      </div>
+    </div>
     
       
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="regression.jpg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Regression is used in many fields, including finance, economics, biology, and engineering. The goal is to predict a continuous outcome on historical or observed data.</figcaption>
+</figure>
+</div>
+<section id="what-is-regresssion" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-regresssion">What is regresssion?</h3>
+<p>Regression is a type of supervised learning task where the goal is to predict a continuous variable based on the input features. In other words, regression models are designed to establish a relationship between the input features and the target variable.</p>
+<p><strong>Target Variable (Dependent Variable):</strong> a continuous numeric value that the model tries to estimate.</p>
+<p><strong>Input Features (Independent Variables):</strong> the model learns how these features relate to the target variable during the training process.</p>
+</section>
+<section id="types-of-regression" class="level3">
+<h3 class="anchored" data-anchor-id="types-of-regression">Types of Regression</h3>
+<section id="linear-regression" class="level4">
+<h4 class="anchored" data-anchor-id="linear-regression">Linear Regression</h4>
+<p>A linear regression model makes a prediction by simply computing a weighted sum of the input features, plus a constant called the bias term (also called the intercept term). The relationship is modeled as a straight line.</p>
+</section>
+<section id="polynomial-regression" class="level4">
+<h4 class="anchored" data-anchor-id="polynomial-regression">Polynomial Regression</h4>
+<p>Allows for more complex relationships by introducing polynomial terms into the regression equation. This is particularly useful when the relationship between variables is nonlinear.</p>
+</section>
+<section id="ridge-regression-and-lasso-regression" class="level4">
+<h4 class="anchored" data-anchor-id="ridge-regression-and-lasso-regression">Ridge Regression and Lasso Regression</h4>
+<p>Ridge and Lasso regression are variations of linear regression that include regularization terms to prevent overfitting. Ridge regression adds a penalty term to the squared magnitude of coefficients, while Lasso regression adds a penalty term to the absolute magnitude.</p>
+</section>
+<section id="elastic-net-regression" class="level4">
+<h4 class="anchored" data-anchor-id="elastic-net-regression">Elastic Net Regression</h4>
+<p>Elastic net regression is a middle ground between ridge regression and lasso regression. The regularization term is a weighted sum of both ridge and lasso’s regularization terms, and you can control the mix ratio <code>r</code>. When <code>r = 0</code>, elastic net is equivalent to ridge regression, and when <code>r = 1</code>, it is equivalent to lasso regression</p>
+</section>
+<section id="logistic-regression" class="level4">
+<h4 class="anchored" data-anchor-id="logistic-regression">Logistic Regression</h4>
+<p>Logistic regression is used to estimate the probability that an instance belongs to a particular class. If the estimated probability is greater than a given threshold, then the model predicts that the instance belongs to that class. This makes it a binary classifier. Similar to a linear regression model, a logistic regression model calculates the weighted sum of the input features, but instead of returning the result, it rturns the logistic of the result.</p>
+</section>
+<section id="softmax-regression" class="level4">
+<h4 class="anchored" data-anchor-id="softmax-regression">Softmax Regression</h4>
+<p>Softmax regression is a generalization of logistic regression to support multiple classes without having to train and combine multiple binary classifiers. The algorithm computes a score for each class, estimates the probability that an instance belongs to the class, and predicts the class with the highest probability.</p>
+</section>
+</section>
+<section id="performance-metrics" class="level3">
+<h3 class="anchored" data-anchor-id="performance-metrics">Performance Metrics</h3>
+<p><strong>Mean Squared Error (MSE):</strong> Measures the average squared difference between predicted and true values. This is used to assessing the accuracy of a model.</p>
+<p><strong>Mean Absolute Error (MAE):</strong> Measures the average absolute difference between predicted and true values. It is less sensitive to outliers than MSE.</p>
+<p><strong>R-squared (R²):</strong> Represents the proportion of the variance in the target variable that is predictable from the input features. Ranges from 0 to 1, where 1 indicates a perfect fit.</p>
+</section>
+<section id="gradient-descent" class="level3">
+<h3 class="anchored" data-anchor-id="gradient-descent">Gradient Descent</h3>
+<p>Gradient Descent is an optimization algorithm used to minimize a cost function by adjusting the weights of a model. The algorithm follows these steps:</p>
+<ol type="1">
+<li>Start with random values for the model parameters.</li>
+<li>Calculate the gradient of the cost function. The gradient indicates the direction of the steepest increase</li>
+<li>Adjust the model parameters in the opposite direction of the gradient to decrease the cost function.</li>
+<li>Repeat steps 2 and 3 until the algorithm converges to a minimum</li>
+</ol>
+<p>The algorith improves gradually, taking one step at a time. The size of the steps is determined by the learning rate. If the learning rate is too small, the algorithm will take a long time to converge. If the learning rate is too high, the algorithm will miss key patterns in the data.</p>
+</section>
+<section id="early-stopping" class="level3">
+<h3 class="anchored" data-anchor-id="early-stopping">Early Stopping</h3>
+<p>Polynomial regression algorithms use a technique called Early Stopping to prevent overfitting. As an algorithm learns, its prediction error (RMSE) goes down. After a while, though, the validation error starts to go back up. This indicates that the model has started to overfit the data. With early stopping, you stop training as soon as the validation error reaches the minimum.</p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-date-sort="1701666000000" data-listing-file-modified-sort="1702442129582" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
-<div class="thumbnail">
-<p><a href="./posts/anomaly detection/index.html"> <img src="./posts/anomaly detection/anomaly.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/anomaly detection/index.html">
-<h3 class="no-anchor listing-title">
-Anomaly/Outlier Detection
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-The goal is to learn what “normal” data looks like, and then use that to detect abnormal instances. These instances are called anomalies or outliers.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/anomaly detection/index.html">
-<div class="listing-date">
-Dec 4, 2023
-</div>
-<div class="listing-author">
-Britney Aiken
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-date-sort="1701666000000" data-listing-file-modified-sort="1702450415799" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="5">
-<div class="thumbnail">
-<p><a href="./posts/classification/index.html"> <img src="./posts/classification/classification.jpg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/classification/index.html">
-<h3 class="no-anchor listing-title">
-Classification
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-Data classification is the process of organizing and labeling data into predefined categories or classes. The goal is to train a machine learning model to recognize patterns…
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/classification/index.html">
-<div class="listing-date">
-Dec 4, 2023
-</div>
-<div class="listing-author">
-Britney Aiken
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-listing-date-sort="1701666000000" data-listing-file-modified-sort="1702445719272" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2">
-<div class="thumbnail">
-<p><a href="./posts/probability theory/index.html"> <img src="./posts/probability theory/prob theory.jpg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/probability theory/index.html">
-<h3 class="no-anchor listing-title">
-Probability Theory and Random Variables
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-P…
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/probability theory/index.html">
-<div class="listing-date">
-Dec 4, 2023
-</div>
-<div class="listing-author">
-Britney Aiken
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-listing-date-sort="1701666000000" data-listing-file-modified-sort="1702442115479" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
-<div class="thumbnail">
-<p><a href="./posts/regression/index.html"> <img src="./posts/regression/regression.jpg" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/regression/index.html">
-<h3 class="no-anchor listing-title">
-Linear and Nonlinear Regression
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-Regression is a type of supervised learning task where the goal is to predict…
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/regression/index.html">
-<div class="listing-date">
-Dec 4, 2023
-</div>
-<div class="listing-author">
-Britney Aiken
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-listing-date-sort="1701406800000" data-listing-file-modified-sort="1702439541639" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4">
-<div class="thumbnail">
-<p><a href="./posts/clustering/index.html"> <img src="./posts/clustering/clustering.png" class="thumbnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./posts/clustering/index.html">
-<h3 class="no-anchor listing-title">
-Clustering
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-Data clustering is a method used in machine…
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./posts/clustering/index.html">
-<div class="listing-date">
-Dec 1, 2023
-</div>
-<div class="listing-author">
-Britney Aiken
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

@@ -1,9 +1,0 @@
----
-title: "Probability Theory and Random Variables"
-author: "Britney Aiken"
-date: "2023-12-04"
-categories: [code, analysis]
-image: "prob theory.jpg"
----
-
-![](prob theory.jpg)

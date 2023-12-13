@@ -2,11 +2,11 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/post1/index.html",
-      "/posts/post3/index.html",
-      "/posts/post4/index.html",
-      "/posts/post5/index.html",
-      "/posts/post2/index.html"
+      "/posts/anomaly detection/index.html",
+      "/posts/classification/index.html",
+      "/posts/probability theory/index.html",
+      "/posts/regression/index.html",
+      "/posts/clustering/index.html"
     ]
   }
 ]

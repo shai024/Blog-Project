@@ -1,0 +1,36 @@
+---
+title: "Anomaly/Outlier Detection"
+author: "Britney Aiken"
+date: "2023-12-04"
+image: "anomaly.png"
+code-fold: true
+code-tools: true
+code-block-bg: true
+code-block-border-left: "#31BAE9"
+---
+
+![Anomaly detection is useful in a wide variety of applications, such as fraud detection, detecting defective products, and cybersecurity.](anomaly.png)
+
+### What is Anomaly Detection?
+The goal is to learn what “normal” data looks like, and then use that to detect abnormal instances. These instances are called anomalies or outliers. 
+
+### Why is it important?
+Anomaly detection is a critical tool for maintaining the integrity and security of a system. It enables early identification of unusual patterns that may causes issues.
+
+
+### Algorithms for Anamoly Detction
+
+**Gaussian Mixture**
+Anomaly detection assumes that normal instances occur more often than outliers. The algorithm starts by learning the patterns of normal behavior and analzes the datapoint that do not fit the pattern. When using a Gaussian mixture model for anomaly detection, any instance located in a low-density region can be considered an anomaly.
+
+**Fast-MCD (Minimum Covariance Determinant)**
+This algorithm is useful for outlier detection, especially when trying to clean up a dataset. When the algorithm estimates the parameters of the Gaussian distribution, it ignores the instances that are most likely outlier, making it easier to identify them.
+
+**Isolation Forest**
+This algorithm works well in high-dimensional datasets. It builds a random forest where each decision tree grows randomly. The datapoints gradually spread apart causing the anomalies to become isolated much fater than normal datapoints. 
+
+**Local outlier factor (LOF)**
+This algorithm compares the density of instances around a given instance to the density around its neighbors. An anomaly is often more isolated than its k-nearest neighbors.
+
+**One-class SVM**
+This algorithm is works well for novelty detection. Novelty detection differs from anomaly detection by assuming the algorithm was trained on a “clean” dataset, with no outliers. One-class SVM works by finding a small region that encompasses all the instances. If a new instance does not fall within this region, it is an anomaly
