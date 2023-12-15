@@ -26,6 +26,7 @@ Anomaly detection assumes that normal instances occur more often than outliers. 
 ```{python}
 from sklearn.mixture import GaussianMixture
 import matplotlib.pyplot as plt
+import numpy as np
 from sklearn.datasets import fetch_openml
 
 dataset = fetch_openml('S3', as_frame=False)

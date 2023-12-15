@@ -186,9 +186,6 @@ Multilabel classification allows an instance to be associated with multiple labe
 
 Multioutput Classification is a generalization of multilabel classification where each label can be multiclass
 
-
-
-
 ### References
 Xiao, Han, et al. “Fashion-MNIST.” OpenML, openml.org/search?type=data&amp;status=active&amp;sort=qualities.NumberOfNumericFeatures&amp;id=40996. Accessed 15 Dec. 2023. 
 
