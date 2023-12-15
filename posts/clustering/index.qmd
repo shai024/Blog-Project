@@ -48,6 +48,9 @@ from sklearn.cluster import KMeans
 from sklearn.datasets import make_blobs
 import numpy as np
 import matplotlib.pyplot as plt
+from sklearn.datasets import fetch_openml
+
+fashion = fetch_openml('fashion-mnist', as_frame=False)
 
 
 blob_centers = np.array([[ 0.2,  2.3], [-1.5 ,  2.3], [-2.8,  1.8],

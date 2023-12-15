@@ -24,6 +24,15 @@ import sklearn
 from sklearn.datasets import fetch_openml
 import matplotlib.pyplot as plt
 
+# Import the dataset
+fashion_data = fetch_openml('fashion-mnist', as_frame=False)
+data = fashion_data.data
+target = fashion_data.target
+
+```
+
+
+```{python}
 # Setup data visualization
 def plot_digit(image_data):
     image = image_data.reshape(28, 28)
@@ -36,32 +45,21 @@ plt.rc('legend', fontsize=14)
 plt.rc('xtick', labelsize=10)
 plt.rc('ytick', labelsize=10)
 
-# Import the dataset
-mnist = fetch_openml('mnist_784', as_frame=False)
-X, y = mnist.data, mnist.target
-
 
 # Plot example data
 plt.figure(figsize=(9, 9))
-for idx, image_data in enumerate(X[:100]):
+for idx, image_data in enumerate(data[:10]):
     plt.subplot(10, 10, idx + 1)
     plot_digit(image_data)
 plt.subplots_adjust(wspace=0, hspace=0)
 plt.show()
-
 ```
-The figure above shows a sample of the MNIST dataset. The calculations and visuals below will reference this dataset.
+The figure above shows a sample of the fashion mnist dataset. The calculations and visuals below will reference this dataset.
+
 
 ### Binary Classifiers
 Binary classification involves categorizing instances into one of two classes. These classes are usually boolean values(true or false; yes or no, 0 or 1). Evaluating the performance of a classifier is crucial to understand how well it generalizes to new data. Common performance measures include accuracy, precision, recall, F1 score, and the ROC-AUC curve. These metrics provide insights into the classifier's strengths and weaknesses,
 
-
-```{python}
-some_digit = X[7]
-plot_digit(some_digit)
-plt.show()
-```
-We will train a binary classifier for the number `3`
 
 #### Confusion Matrix
 A confusion matrix provides a detailed breakdown of the model's predictions and the actual outcomes for each class. The four components of a confusion matrix are true positives (TP), true negatives (TN), false positives (FP), and false negatives (FN). These components are used to calculate performance metrics for a binary classifier.
@@ -85,17 +83,17 @@ from sklearn.linear_model import SGDClassifier
 from sklearn.model_selection import cross_val_predict
 
 # create the target vector
-X_train, X_test, y_train, y_test = X[:60000], X[60000:], y[:60000], y[60000:]
-y_train_3 = (y_train == '3')  
-y_test_3 = (y_test == '3')
+xTrain, xTest, yTrain, yTest = data[:1000], data[1000:], target[:1000], target[1000:]
+yTrainGood = (yTrain == '7')  
+yTestGood = (yTest == '7')
 
 # train the classifier
-sgd_clf = SGDClassifier(random_state=42)
-sgd_clf.fit(X_train, y_train_3)
-y_train_pred = cross_val_predict(sgd_clf, X_train, y_train_3, cv=3)
+classifier = SGDClassifier()
+classifier.fit(xTrain, yTrainGood)
+yTrainPrediction = cross_val_predict(classifier, xTrain, yTrainGood, cv=3)
 
 # get precision score
-print("The presicion score after training the binary classifier: ", precision_score(y_train_3, y_train_pred))
+print("The presicion score after training the binary classifier: ", precision_score(yTrainGood, yTrainPrediction))
 ```
 
 **Recall:** The ratio of true positives to the total actual positives. `TP/(TP+FN)` This metric is also known as Sensitivity or True Positive Rate
@@ -103,7 +101,7 @@ print("The presicion score after training the binary classifier: ", precision_sc
 from sklearn.metrics import recall_score
 
 # get recall score
-print("The recall score of the classifier: ", recall_score(y_train_3, y_train_pred))
+print("The recall score of the classifier: ", recall_score(yTrainGood, yTrainPrediction))
 ```
 
 **Specificity:** The ratio of true negatives to the total actual negatives. `TN/(TN+FP)` This metric is also known as the True Negative Rate
@@ -113,7 +111,7 @@ print("The recall score of the classifier: ", recall_score(y_train_3, y_train_pr
 from sklearn.metrics import f1_score
 
 # get F1 score
-print("The F1 score of the classifier: ", f1_score(y_train_3, y_train_pred))
+print("The F1 score of the classifier: ", f1_score(yTrainGood, yTrainPrediction))
 ```
 
 
@@ -122,19 +120,21 @@ The precision-recall curve is created by plotting precision against recall at di
 ```{python}
 from sklearn.metrics import precision_recall_curve
 
-threshold = 3000
-y_scores = cross_val_predict(sgd_clf, X_train, y_train_3, cv=3, method="decision_function")
+threshold = 1000
+yScores = cross_val_predict(classifier, xTrain, yTrainGood, cv=3, method="decision_function")
 
 # plot and format the PR curve
-precisions, recalls, thresholds = precision_recall_curve(y_train_3, y_scores)
-idx = (thresholds >= threshold).argmax() 
+precisions, recalls, thresholds = precision_recall_curve(yTrainGood, yScores)
+idx = (thresholds > threshold).argmax() 
 
 plt.figure(figsize=(6, 5)) 
 plt.plot(recalls, precisions, linewidth=2, label="Precision/Recall curve")
-plt.plot([recalls[idx], recalls[idx]], [0., precisions[idx]], "k:")
+
 plt.plot([0.0, recalls[idx]], [precisions[idx], precisions[idx]], "k:")
+plt.plot([recalls[idx], recalls[idx]], [0., precisions[idx]], "k:")
+
 plt.plot([recalls[idx]], [precisions[idx]], "ko",
-         label="Point at threshold 3,000")
+         label="Point at threshold 1000")
 plt.xlabel("Recall")
 plt.ylabel("Precision")
 plt.axis([0, 1, 0, 1])
@@ -149,21 +149,20 @@ The Receiver Operating Characteristic (ROC) curve is another tool used with bina
 from sklearn.metrics import roc_curve
 
 # calculate roc
-idx_for_90_precision = (precisions >= 0.90).argmax()
-threshold_for_90_precision = thresholds[idx_for_90_precision]
-fpr, tpr, thresholds = roc_curve(y_train_3, y_scores)
-idx_for_threshold_at_90 = (thresholds <= threshold_for_90_precision).argmax()
-tpr_90, fpr_90 = tpr[idx_for_threshold_at_90], fpr[idx_for_threshold_at_90]
+precisionIdx = (precisions >= 0.90).argmax()
+thresholdPrecision = thresholds[precisionIdx]
+falsePositiveRate, truePositiveRate, thresholds = roc_curve(yTrainGood, yScores)
+idxThreshold = (thresholds <= thresholdPrecision).argmax()
+truePositiveRate90, falsePositiveRate90 = truePositiveRate[idxThreshold], falsePositiveRate[idxThreshold]
 
 # plot the roc curve
-plt.figure(figsize=(6, 5))  # extra code – not needed, just formatting
-plt.plot(fpr, tpr, linewidth=2, label="ROC curve")
-plt.plot([0, 1], [0, 1], 'k:', label="Random classifier's ROC curve")
-plt.plot([fpr_90], [tpr_90], "ko", label="Threshold for 90% precision")
+plt.figure(figsize=(6, 5))
+plt.plot(falsePositiveRate, truePositiveRate, linewidth=2, label="ROC curve")
+plt.plot([falsePositiveRate90], [truePositiveRate90], "ko", label="Threshold for 90% precision")
 
 # format the figure
 plt.xlabel('False Positive Rate')
-plt.ylabel('True Positive Rate (Recall)')
+plt.ylabel('True Positive Rate')
 plt.grid()
 plt.axis([0, 1, 0, 1])
 plt.legend(loc="lower right", fontsize=13)
@@ -184,3 +183,4 @@ In multiclass classification, instances are assigned to one of multiple classes.
 Multilabel classification allows an instance to be associated with multiple labels or classes at the same time. This scenario is common in real-world problems where data points have many attributes.
 
 Multioutput Classification is a generalization of multilabel classification where each label can be multiclass
+
