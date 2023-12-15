@@ -28,16 +28,17 @@ A linear regression model makes a prediction by calculating a weighted sum of th
 import matplotlib.pyplot as plt
 from sklearn.datasets import fetch_openml
 from sklearn.linear_model import LinearRegression
+import numpy as np
 
-dataset = fetch_openml('isolet', as_frame=False)
-data = dataset.data
-target = dataset.target
+rnstate = np.random.RandomState(3)
+data = 10 * rnstate.rand(100)
+target = 2 * data - 3 + rnstate.randn(100)
 plt.scatter(data, target);
 
 linearModel = LinearRegression(fit_intercept=True)
 linearModel.fit(data[:, np.newaxis], target)
 xfit = np.linspace(0, 10, 1000)
-yfit = model.predict(xfit[:, np.newaxis])
+yfit = linearModel.predict(xfit[:, np.newaxis])
 plt.plot(xfit, yfit);
 plt.show()
 ```
@@ -46,41 +47,6 @@ plt.show()
 #### Polynomial Regression
 Polynomial regression allows for more complex relationships by adding polynomial terms into the regression equation. 
 
-
-```{python}
-from sklearn.preprocessing import PolynomialFeatures
-from sklearn.linear_model import LinearRegression
-
-# create data points
-np.random.seed(42)
-m = 100
-X = 6 * np.random.rand(m, 1) - 3
-y = 0.5 * X ** 2 + X + 2 + np.random.randn(m, 1)
-
-# add features
-poly_features = PolynomialFeatures(degree=2, include_bias=False)
-X_poly = poly_features.fit_transform(X)
-
-# fit the model
-lin_reg = LinearRegression()
-lin_reg.fit(X_poly, y)
-
-# make predictions
-X_new = np.linspace(-3, 3, 100).reshape(100, 1)
-X_new_poly = poly_features.transform(X_new)
-y_new = lin_reg.predict(X_new_poly)
-
-# plot and format the graph
-plt.figure(figsize=(6, 4))
-plt.plot(X, y, "b.")
-plt.plot(X_new, y_new, "r-", linewidth=2, label="Predictions")
-plt.xlabel("$x_1$")
-plt.ylabel("$y$", rotation=0)
-plt.legend(loc="upper left")
-plt.axis([-3, 3, 0, 10])
-plt.grid()
-plt.show()
-```
 
 #### Ridge Regression and Lasso Regression
 Ridge and Lasso regression are variations of linear regression that include regularization terms to prevent overfitting. Ridge regression adds a penalty term to the squared magnitude of coefficients, while Lasso regression adds a penalty term to the absolute magnitude.
