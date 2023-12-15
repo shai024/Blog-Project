@@ -56,6 +56,7 @@ k = 15
 kmeans = KMeans(n_clusters=k)
 y_pred = kmeans.fit_predict(data)
 
+# References: Geron
 def plot_clusters(X, y=None):
     plt.scatter(X[:, 0], X[:, 1], c=y, s=1)
     plt.xlabel("$x_1$")
@@ -67,6 +68,7 @@ plt.gca().set_axisbelow(True)
 plt.grid()
 plt.show()
 ```
+References: [@Geron], [@Fränti]
 
 #### Advanatages and Limitations
 The simplicity of K-means makes it efficient and capable of handling large datasets. It also scales well as the number of data points grows. 
@@ -141,6 +143,7 @@ plot_clusterer_comparison(Clusters1, Clusters2, data, "Solution with a random in
 
 plt.show()
 ```
+References: [@Geron]
 
 #### Improvements
 One imrovement to limit the influence of the inintial centroids is to run the algorithm multiple times with different initializations and keep the best one. The best solution is determined by the model's `inertia` (the sum of the squared distances between the instances and their closest centroids). A lower interia means a better model. 
@@ -181,3 +184,9 @@ Data points that are neither core points or border points.
 
 #### Advanatages and Limitations
 DBSCAN is capable of identifying any number of clusters of any shape, and it is not senistive to outliers. However, if the density varies significantly across the clusters, or if there’s no low-density region around the clusters, DBSCAN may struggle to identify the clusters. This algorithm also does not scale well to large datasets.
+
+
+### References
+Fränti , P, and O Virmajoki. “S3.” OpenML, openml.org/search?type=data&amp;status=active&amp;sort=qualities.NumberOfNumericFeatures&amp;id=42112. Accessed 15 Dec. 2023. 
+
+Géron, Aurélien. Hands-on Machine Learning with Scikit-Learn, Keras, and Tensorflow: Concepts, Tools, and Techniques to Build Intelligent Systems. O’Reilly Media, 2022. 

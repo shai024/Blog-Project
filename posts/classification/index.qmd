@@ -26,10 +26,11 @@ import matplotlib.pyplot as plt
 
 # Import the dataset
 fashion_data = fetch_openml('fashion-mnist', as_frame=False)
-data = fashion_data.data
+data = fashion_data.data 
 target = fashion_data.target
 
 ```
+References: [@Xiao]
 
 
 ```{python}
@@ -54,7 +55,8 @@ for idx, image_data in enumerate(data[:10]):
 plt.subplots_adjust(wspace=0, hspace=0)
 plt.show()
 ```
-The figure above shows a sample of the fashion mnist dataset. The calculations and visuals below will reference this dataset.
+The figure above shows a sample of the fashion mnist dataset. The calculations and visuals below will reference this dataset. References: [@Geron]
+
 
 
 ### Binary Classifiers
@@ -184,3 +186,10 @@ Multilabel classification allows an instance to be associated with multiple labe
 
 Multioutput Classification is a generalization of multilabel classification where each label can be multiclass
 
+
+
+
+### References
+Xiao, Han, et al. “Fashion-MNIST.” OpenML, openml.org/search?type=data&amp;status=active&amp;sort=qualities.NumberOfNumericFeatures&amp;id=40996. Accessed 15 Dec. 2023. 
+
+Géron, Aurélien. Hands-on Machine Learning with Scikit-Learn, Keras, and Tensorflow: Concepts, Tools, and Techniques to Build Intelligent Systems. O’Reilly Media, 2022. 

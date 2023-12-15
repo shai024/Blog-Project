@@ -721,18 +721,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>plt.scatter(anomalies[:, <span class="dv">0</span>], anomalies[:, <span class="dv">1</span>], color<span class="op">=</span><span class="st">'r'</span>, marker<span class="op">=</span><span class="st">'*'</span>)</span>
 <span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
 <span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>**Fast-MCD (Minimum Covariance Determinant)**</span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>This algorithm is useful for outlier detection, especially when trying to clean up a dataset. When the algorithm estimates the parameters of the Gaussian distribution, it ignores the instances that are most likely outlier, making it easier to identify them.</span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>**Isolation Forest**</span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>This algorithm works well in high-dimensional datasets. It builds a random forest where each decision tree grows randomly. The datapoints gradually spread apart causing the anomalies to become isolated much fater than normal datapoints. </span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>**Local outlier factor (LOF)**</span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>This algorithm compares the density of instances around a given instance to the density around its neighbors. An anomaly is often more isolated than its k-nearest neighbors.</span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>**One-class SVM**</span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>This algorithm is works well for novelty detection. Novelty detection differs from anomaly detection by assuming the algorithm was trained on a “clean” dataset, with no outliers. One-class SVM works by finding a small region that encompasses all the instances. If a new instance does not fall within this region, it is an anomaly</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>References: <span class="co">[</span><span class="ot">@Fränti</span><span class="co">]</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>**Fast-MCD (Minimum Covariance Determinant)**</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>This algorithm is useful for outlier detection, especially when trying to clean up a dataset. When the algorithm estimates the parameters of the Gaussian distribution, it ignores the instances that are most likely outlier, making it easier to identify them.</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>**Isolation Forest**</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>This algorithm works well in high-dimensional datasets. It builds a random forest where each decision tree grows randomly. The datapoints gradually spread apart causing the anomalies to become isolated much fater than normal datapoints. </span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>**Local outlier factor (LOF)**</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>This algorithm compares the density of instances around a given instance to the density around its neighbors. An anomaly is often more isolated than its k-nearest neighbors.</span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>**One-class SVM**</span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>This algorithm is works well for novelty detection. Novelty detection differs from anomaly detection by assuming the algorithm was trained on a “clean” dataset, with no outliers. One-class SVM works by finding a small region that encompasses all the instances. If a new instance does not fall within this region, it is an anomaly</span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a><span class="fu">### References</span></span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>Fränti , P, and O Virmajoki. “S3.” OpenML, openml.org/search?type=data<span class="dv">&amp;amp;</span>status=active<span class="dv">&amp;amp;</span>sort=qualities.NumberOfNumericFeatures<span class="dv">&amp;amp;</span>id=42112. Accessed 15 Dec. 2023.</span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

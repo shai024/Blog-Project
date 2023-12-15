@@ -40,6 +40,7 @@ plt.scatter(data[:, 0], data[:, 1])
 plt.scatter(anomalies[:, 0], anomalies[:, 1], color='r', marker='*')
 plt.show()
 ```
+References: [@Fränti]
 
 **Fast-MCD (Minimum Covariance Determinant)**
 This algorithm is useful for outlier detection, especially when trying to clean up a dataset. When the algorithm estimates the parameters of the Gaussian distribution, it ignores the instances that are most likely outlier, making it easier to identify them.
@@ -52,3 +53,7 @@ This algorithm compares the density of instances around a given instance to the 
 
 **One-class SVM**
 This algorithm is works well for novelty detection. Novelty detection differs from anomaly detection by assuming the algorithm was trained on a “clean” dataset, with no outliers. One-class SVM works by finding a small region that encompasses all the instances. If a new instance does not fall within this region, it is an anomaly
+
+
+### References
+Fränti , P, and O Virmajoki. “S3.” OpenML, openml.org/search?type=data&amp;status=active&amp;sort=qualities.NumberOfNumericFeatures&amp;id=42112. Accessed 15 Dec. 2023.
