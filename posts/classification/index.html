@@ -199,7 +199,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Import the dataset</span></span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>fashion_data <span class="op">=</span> fetch_openml(<span class="st">'fashion-mnist'</span>, as_frame<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> fashion_data.data</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> fashion_data.data </span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>target <span class="op">=</span> fashion_data.target</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
@@ -207,6 +207,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   warn(</code></pre>
 </div>
 </div>
+<p>References: <span class="citation" data-cites="Xiao">[@Xiao]</span></p>
 <div class="cell" data-execution_count="2">
 <details>
 <summary>Code</summary>
@@ -232,10 +233,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-3-output-1.png" width="687" height="84"></p>
+<p><img src="index_files/figure-html/cell-3-output-1.png" class="img-fluid"></p>
 </div>
 </div>
-<p>The figure above shows a sample of the fashion mnist dataset. The calculations and visuals below will reference this dataset.</p>
+<p>The figure above shows a sample of the fashion mnist dataset. The calculations and visuals below will reference this dataset. References: <span class="citation" data-cites="Geron">[@Geron]</span></p>
 </section>
 <section id="binary-classifiers" class="level3">
 <h3 class="anchored" data-anchor-id="binary-classifiers">Binary Classifiers</h3>
@@ -271,7 +272,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The presicion score after training the binary classifier: "</span>, precision_score(yTrainGood, yTrainPrediction))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>The presicion score after training the binary classifier:  0.8793103448275862</code></pre>
+<pre><code>The presicion score after training the binary classifier:  0.860655737704918</code></pre>
 </div>
 </div>
 <p><strong>Recall:</strong> The ratio of true positives to the total actual positives. <code>TP/(TP+FN)</code> This metric is also known as Sensitivity or True Positive Rate</p>
@@ -284,7 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The recall score of the classifier: "</span>, recall_score(yTrainGood, yTrainPrediction))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>The recall score of the classifier:  0.8869565217391304</code></pre>
+<pre><code>The recall score of the classifier:  0.9130434782608695</code></pre>
 </div>
 </div>
 <p><strong>Specificity:</strong> The ratio of true negatives to the total actual negatives. <code>TN/(TN+FP)</code> This metric is also known as the True Negative Rate</p>
@@ -298,7 +299,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"The F1 score of the classifier: "</span>, f1_score(yTrainGood, yTrainPrediction))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>The F1 score of the classifier:  0.8831168831168832</code></pre>
+<pre><code>The F1 score of the classifier:  0.8860759493670886</code></pre>
 </div>
 </div>
 </section>
@@ -331,11 +332,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
 <span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">"lower left"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display" data-execution_count="12">
-<pre><code>&lt;matplotlib.legend.Legend at 0x24f800214f0&gt;</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>&lt;matplotlib.legend.Legend at 0x2be25fb1fa0&gt;</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-7-output-2.png" width="531" height="433"></p>
+<p><img src="index_files/figure-html/cell-7-output-2.png" class="img-fluid"></p>
 </div>
 </div>
 </section>
@@ -368,7 +369,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-8-output-1.png" width="531" height="433"></p>
+<p><img src="index_files/figure-html/cell-8-output-1.png" class="img-fluid"></p>
 </div>
 </div>
 <p>The higher the recall (TPR), the more false positives (FPR) the classifier produces. One way to compare classifiers is to measure the area under the curve (AUC). A perfect classifier will have a ROC AUC equal to 1, whereas a purely random classifier will have a ROC AUC equal to 0.5.</p>
@@ -384,6 +385,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="other-types-of-classification">Other Types of Classification</h3>
 <p>Multilabel classification allows an instance to be associated with multiple labels or classes at the same time. This scenario is common in real-world problems where data points have many attributes.</p>
 <p>Multioutput Classification is a generalization of multilabel classification where each label can be multiclass</p>
+</section>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">References</h3>
+<p>Xiao, Han, et al.&nbsp;“Fashion-MNIST.” OpenML, openml.org/search?type=data&amp;status=active&amp;sort=qualities.NumberOfNumericFeatures&amp;id=40996. Accessed 15 Dec.&nbsp;2023.</p>
+<p>Géron, Aurélien. Hands-on Machine Learning with Scikit-Learn, Keras, and Tensorflow: Concepts, Tools, and Techniques to Build Intelligent Systems. O’Reilly Media, 2022.</p>
 
 
 <!-- -->
@@ -978,13 +984,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb13-200"><a href="#cb13-200" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-201"><a href="#cb13-201" aria-hidden="true" tabindex="-1"></a>Multioutput Classification is a generalization of multilabel classification where each label can be multiclass</span>
 <span id="cb13-202"><a href="#cb13-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-203"><a href="#cb13-203" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-204"><a href="#cb13-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-203"><a href="#cb13-203" aria-hidden="true" tabindex="-1"></a><span class="fu">### References</span></span>
+<span id="cb13-204"><a href="#cb13-204" aria-hidden="true" tabindex="-1"></a>Xiao, Han, et al. “Fashion-MNIST.” OpenML, openml.org/search?type=data<span class="dv">&amp;amp;</span>status=active<span class="dv">&amp;amp;</span>sort=qualities.NumberOfNumericFeatures<span class="dv">&amp;amp;</span>id=40996. Accessed 15 Dec. 2023. </span>
 <span id="cb13-205"><a href="#cb13-205" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-206"><a href="#cb13-206" aria-hidden="true" tabindex="-1"></a><span class="fu">### References</span></span>
-<span id="cb13-207"><a href="#cb13-207" aria-hidden="true" tabindex="-1"></a>Xiao, Han, et al. “Fashion-MNIST.” OpenML, openml.org/search?type=data<span class="dv">&amp;amp;</span>status=active<span class="dv">&amp;amp;</span>sort=qualities.NumberOfNumericFeatures<span class="dv">&amp;amp;</span>id=40996. Accessed 15 Dec. 2023. </span>
-<span id="cb13-208"><a href="#cb13-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-209"><a href="#cb13-209" aria-hidden="true" tabindex="-1"></a>Géron, Aurélien. Hands-on Machine Learning with Scikit-Learn, Keras, and Tensorflow: Concepts, Tools, and Techniques to Build Intelligent Systems. O’Reilly Media, 2022. </span>
+<span id="cb13-206"><a href="#cb13-206" aria-hidden="true" tabindex="-1"></a>Géron, Aurélien. Hands-on Machine Learning with Scikit-Learn, Keras, and Tensorflow: Concepts, Tools, and Techniques to Build Intelligent Systems. O’Reilly Media, 2022. </span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
