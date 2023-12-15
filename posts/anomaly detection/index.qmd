@@ -25,66 +25,19 @@ Anomaly detection assumes that normal instances occur more often than outliers. 
 
 ```{python}
 from sklearn.mixture import GaussianMixture
-from matplotlib.colors import LogNorm
-from sklearn.datasets import make_blobs
-import numpy as np
 import matplotlib.pyplot as plt
+from sklearn.datasets import fetch_openml
 
-def plot_centroids(centroids, weights=None, circle_color='w', cross_color='k'):
-    if weights is not None:
-        centroids = centroids[weights > weights.max() / 10]
-    plt.scatter(centroids[:, 0], centroids[:, 1],
-                marker='o', s=35, linewidths=8,
-                color=circle_color, zorder=10, alpha=0.9)
-    plt.scatter(centroids[:, 0], centroids[:, 1],
-                marker='x', s=2, linewidths=12,
-                color=cross_color, zorder=11, alpha=1)
+dataset = fetch_openml('S3', as_frame=False)
+data = dataset.data[:800]
 
-def plot_gaussian_mixture(clusterer, X, resolution=1000, show_ylabels=True):
-    mins = X.min(axis=0) - 0.1
-    maxs = X.max(axis=0) + 0.1
-    xx, yy = np.meshgrid(np.linspace(mins[0], maxs[0], resolution),
-                         np.linspace(mins[1], maxs[1], resolution))
-    Z = -clusterer.score_samples(np.c_[xx.ravel(), yy.ravel()])
-    Z = Z.reshape(xx.shape)
-
-    plt.contourf(xx, yy, Z,
-                 norm=LogNorm(vmin=1.0, vmax=30.0),
-                 levels=np.logspace(0, 2, 12))
-    plt.contour(xx, yy, Z,
-                norm=LogNorm(vmin=1.0, vmax=30.0),
-                levels=np.logspace(0, 2, 12),
-                linewidths=1, colors='k')
-
-    Z = clusterer.predict(np.c_[xx.ravel(), yy.ravel()])
-    Z = Z.reshape(xx.shape)
-    plt.contour(xx, yy, Z,
-                linewidths=2, colors='r', linestyles='dashed')
-    
-    plt.plot(X[:, 0], X[:, 1], 'k.', markersize=2)
-    plot_centroids(clusterer.means_, clusterer.weights_)
-
-    plt.xlabel("$x_1$")
-    if show_ylabels:
-        plt.ylabel("$x_2$", rotation=0)
-    else:
-        plt.tick_params(labelleft=False)
-
-gm = GaussianMixture(n_components=3, n_init=10, random_state=42)
-X1, y1 = make_blobs(n_samples=1000, centers=((4, -4), (0, 0)), random_state=42)
-X1 = X1.dot(np.array([[0.374, 0.95], [0.732, 0.598]]))
-X2, y2 = make_blobs(n_samples=250, centers=1, random_state=42)
-X2 = X2 + [6, -8]
-X = np.r_[X1, X2]
-gm.fit(X)
-densities = gm.score_samples(X)
+gm = GaussianMixture().fit(data)
+densities = gm.score_samples(data)
 density_threshold = np.percentile(densities, 2)
-anomalies = X[densities < density_threshold]
+anomalies = data[densities < density_threshold]
 
-plot_gaussian_mixture(gm, X)
+plt.scatter(data[:, 0], data[:, 1])
 plt.scatter(anomalies[:, 0], anomalies[:, 1], color='r', marker='*')
-plt.ylim(top=5.1)
-plt.figure(figsize=(8, 4))
 plt.show()
 ```
 
