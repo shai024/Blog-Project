@@ -57,4 +57,4 @@ This algorithm is works well for novelty detection. Novelty detection differs fr
 
 
 ### References
-Fränti , P, and O Virmajoki. “S3.” OpenML, openml.org/search?type=data&amp;status=active&amp;sort=qualities.NumberOfNumericFeatures&amp;id=42112. Accessed 15 Dec. 2023.
+Fränti, P and O Virmajoki. “S3.” OpenML, openml.org/search?type=data&amp;status=active&amp;sort=qualities.NumberOfNumericFeatures&amp;id=42112. Accessed 15 Dec. 2023.

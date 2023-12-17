@@ -185,8 +185,7 @@ Data points that are neither core points or border points.
 #### Advanatages and Limitations
 DBSCAN is capable of identifying any number of clusters of any shape, and it is not senistive to outliers. However, if the density varies significantly across the clusters, or if there’s no low-density region around the clusters, DBSCAN may struggle to identify the clusters. This algorithm also does not scale well to large datasets.
 
-
 ### References
-Fränti , P, and O Virmajoki. “S3.” OpenML, openml.org/search?type=data&amp;status=active&amp;sort=qualities.NumberOfNumericFeatures&amp;id=42112. Accessed 15 Dec. 2023. 
+Fränti, P and O Virmajoki. “S3.” OpenML, openml.org/search?type=data&amp;status=active&amp;sort=qualities.NumberOfNumericFeatures&amp;id=42112. Accessed 15 Dec. 2023. 
 
 Géron, Aurélien. Hands-on Machine Learning with Scikit-Learn, Keras, and Tensorflow: Concepts, Tools, and Techniques to Build Intelligent Systems. O’Reilly Media, 2022. 
