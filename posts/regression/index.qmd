@@ -41,6 +41,7 @@ yfit = linearModel.predict(xfit[:, np.newaxis])
 plt.plot(xfit, yfit);
 plt.show()
 ```
+References [@Remi]
 
 
 #### Polynomial Regression
@@ -78,3 +79,7 @@ The algorith improves gradually, taking one step at a time. The size of the step
 
 ### Early Stopping
 Polynomial regression algorithms use a technique called Early Stopping to prevent overfitting. As an algorithm learns, its prediction  and validation errors goes down. But after a while, the validation error will start to go back up. This indicates that the model is starting to overfit the data. With early stopping, you stop training as soon as the validation error reaches the minimum.
+
+
+### References
+Remi, M. (2021, April 6). How to run linear regressions in Python Scikit-Learn. ActiveState. https://www.activestate.com/resources/quick-reads/how-to-run-linear-regressions-in-python-scikit-learn/ 
