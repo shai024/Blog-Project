@@ -224,7 +224,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="index_files/figure-html/cell-2-output-2.png" class="img-fluid"></p>
 </div>
 </div>
-<p>References: <span class="citation" data-cites="Fränti">[@Fränti, @Géron]</span></p>
+<p>For continuity, we will continue using the example dataset from the last post (Clustering). References: <span class="citation" data-cites="Fränti">[@Fränti, @Géron]</span></p>
 <p><strong>Fast-MCD (Minimum Covariance Determinant)</strong> This algorithm is useful for outlier detection, especially when trying to clean up a dataset. When the algorithm estimates the parameters of the Gaussian distribution, it ignores the instances that are most likely outlier, making it easier to identify them.</p>
 <p><strong>Isolation Forest</strong> This algorithm works well in high-dimensional datasets. It builds a random forest where each decision tree grows randomly. The datapoints gradually spread apart causing the anomalies to become isolated much fater than normal datapoints.</p>
 <p><strong>Local outlier factor (LOF)</strong> This algorithm compares the density of instances around a given instance to the density around its neighbors. An anomaly is often more isolated than its k-nearest neighbors.</p>
@@ -649,59 +649,61 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="an">code-tools:</span><span class="co"> true</span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="an">code-block-bg:</span><span class="co"> true</span></span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="an">code-block-border-left:</span><span class="co"> "#31BAE9"</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="al">![Anomaly detection is useful in a wide variety of applications, such as fraud detection, detecting defective products, and cybersecurity.](anomaly.png)</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">### What is Anomaly Detection?</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>The goal is to learn what “normal” data looks like, and then use that to detect abnormal instances. These instances are called anomalies or outliers. </span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">### Why is it important?</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>Anomaly detection is a critical tool for maintaining the integrity and security of a system. It enables early identification of unusual patterns that may causes issues.</span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="an">order:</span><span class="co"> 4</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="al">![Anomaly detection is useful in a wide variety of applications, such as fraud detection, detecting defective products, and cybersecurity.](anomaly.png)</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fu">### What is Anomaly Detection?</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>The goal is to learn what “normal” data looks like, and then use that to detect abnormal instances. These instances are called anomalies or outliers. </span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="fu">### Why is it important?</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>Anomaly detection is a critical tool for maintaining the integrity and security of a system. It enables early identification of unusual patterns that may causes issues.</span>
 <span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="fu">### Algorithms for Anamoly Detction</span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>**Gaussian Mixture**</span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>Anomaly detection assumes that normal instances occur more often than outliers. The algorithm starts by learning the patterns of normal behavior and analzes the datapoint that do not fit the pattern. When using a Gaussian mixture model for anomaly detection, any instance located in a low-density region can be considered an anomaly.</span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.mixture <span class="im">import</span> GaussianMixture</span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> fetch_openml</span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> fetch_openml(<span class="st">'S3'</span>, as_frame<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> dataset.data[:<span class="dv">800</span>]</span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>gm <span class="op">=</span> GaussianMixture().fit(data)</span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>densities <span class="op">=</span> gm.score_samples(data)</span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>density_threshold <span class="op">=</span> np.percentile(densities, <span class="dv">2</span>)</span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>anomalies <span class="op">=</span> data[densities <span class="op">&lt;</span> density_threshold]</span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>plt.scatter(data[:, <span class="dv">0</span>], data[:, <span class="dv">1</span>])</span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>plt.scatter(anomalies[:, <span class="dv">0</span>], anomalies[:, <span class="dv">1</span>], color<span class="op">=</span><span class="st">'r'</span>, marker<span class="op">=</span><span class="st">'*'</span>)</span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>References: <span class="co">[</span><span class="ot">@Fränti, @Géron</span><span class="co">]</span></span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>**Fast-MCD (Minimum Covariance Determinant)**</span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>This algorithm is useful for outlier detection, especially when trying to clean up a dataset. When the algorithm estimates the parameters of the Gaussian distribution, it ignores the instances that are most likely outlier, making it easier to identify them.</span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>**Isolation Forest**</span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>This algorithm works well in high-dimensional datasets. It builds a random forest where each decision tree grows randomly. The datapoints gradually spread apart causing the anomalies to become isolated much fater than normal datapoints. </span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>**Local outlier factor (LOF)**</span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>This algorithm compares the density of instances around a given instance to the density around its neighbors. An anomaly is often more isolated than its k-nearest neighbors.</span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>**One-class SVM**</span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>This algorithm is works well for novelty detection. Novelty detection differs from anomaly detection by assuming the algorithm was trained on a “clean” dataset, with no outliers. One-class SVM works by finding a small region that encompasses all the instances. If a new instance does not fall within this region, it is an anomaly</span>
-<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a><span class="fu">### References</span></span>
-<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>Fränti, P and O Virmajoki. “S3.” OpenML, openml.org/search?type=data<span class="dv">&amp;amp;</span>status=active<span class="dv">&amp;amp;</span>sort=qualities.NumberOfNumericFeatures<span class="dv">&amp;amp;</span>id=42112. Accessed 15 Dec. 2023.</span>
-<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>Géron, Aurélien. Hands-on Machine Learning with Scikit-Learn, Keras, and Tensorflow: Concepts, Tools, and Techniques to Build Intelligent Systems. O’Reilly Media, 2022. </span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="fu">### Algorithms for Anamoly Detction</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>**Gaussian Mixture**</span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>Anomaly detection assumes that normal instances occur more often than outliers. The algorithm starts by learning the patterns of normal behavior and analzes the datapoint that do not fit the pattern. When using a Gaussian mixture model for anomaly detection, any instance located in a low-density region can be considered an anomaly.</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.mixture <span class="im">import</span> GaussianMixture</span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.datasets <span class="im">import</span> fetch_openml</span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>dataset <span class="op">=</span> fetch_openml(<span class="st">'S3'</span>, as_frame<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> dataset.data[:<span class="dv">800</span>]</span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>gm <span class="op">=</span> GaussianMixture().fit(data)</span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>densities <span class="op">=</span> gm.score_samples(data)</span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>density_threshold <span class="op">=</span> np.percentile(densities, <span class="dv">2</span>)</span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>anomalies <span class="op">=</span> data[densities <span class="op">&lt;</span> density_threshold]</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>plt.scatter(data[:, <span class="dv">0</span>], data[:, <span class="dv">1</span>])</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>plt.scatter(anomalies[:, <span class="dv">0</span>], anomalies[:, <span class="dv">1</span>], color<span class="op">=</span><span class="st">'r'</span>, marker<span class="op">=</span><span class="st">'*'</span>)</span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>For continuity, we will continue using the example from the last post (Clustering). References: <span class="co">[</span><span class="ot">@Fränti, @Géron</span><span class="co">]</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>**Fast-MCD (Minimum Covariance Determinant)**</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>This algorithm is useful for outlier detection, especially when trying to clean up a dataset. When the algorithm estimates the parameters of the Gaussian distribution, it ignores the instances that are most likely outlier, making it easier to identify them.</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>**Isolation Forest**</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>This algorithm works well in high-dimensional datasets. It builds a random forest where each decision tree grows randomly. The datapoints gradually spread apart causing the anomalies to become isolated much fater than normal datapoints. </span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>**Local outlier factor (LOF)**</span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>This algorithm compares the density of instances around a given instance to the density around its neighbors. An anomaly is often more isolated than its k-nearest neighbors.</span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>**One-class SVM**</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>This algorithm is works well for novelty detection. Novelty detection differs from anomaly detection by assuming the algorithm was trained on a “clean” dataset, with no outliers. One-class SVM works by finding a small region that encompasses all the instances. If a new instance does not fall within this region, it is an anomaly</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a><span class="fu">### References</span></span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>Fränti, P and O Virmajoki. “S3.” OpenML, openml.org/search?type=data<span class="dv">&amp;amp;</span>status=active<span class="dv">&amp;amp;</span>sort=qualities.NumberOfNumericFeatures<span class="dv">&amp;amp;</span>id=42112. Accessed 15 Dec. 2023.</span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>Géron, Aurélien. Hands-on Machine Learning with Scikit-Learn, Keras, and Tensorflow: Concepts, Tools, and Techniques to Build Intelligent Systems. O’Reilly Media, 2022. </span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

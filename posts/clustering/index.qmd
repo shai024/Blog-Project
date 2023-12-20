@@ -7,6 +7,7 @@ code-fold: true
 code-tools: true
 code-block-bg: true
 code-block-border-left: "#31BAE9"
+order: 3
 ---
 
 ![Whether you're a seasoned data scientist or a curious enthusiast, understanding the basics of clustering algorithms can open doors to a deeper comprehension of how data organizes itself.](clustering.png)

@@ -7,6 +7,7 @@ code-fold: true
 code-tools: true
 code-block-bg: true
 code-block-border-left: "#31BAE9"
+order: 5
 ---
 
 ![Regression is used in many fields, including finance, economics, biology, and engineering. The goal is to predict a continuous outcome on historical or observed data.](regression.jpg)

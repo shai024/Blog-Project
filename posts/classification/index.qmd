@@ -8,6 +8,7 @@ code-tools: true
 code-block-bg: true
 code-block-border-left: "#31BAE9"
 code-summary: "Show code"
+order: 2
 ---
 
 ![Data classifcation is the foundation of many machine learing models. It allows us to make informed decisions based on patterns in the data.](classification.jpg)
