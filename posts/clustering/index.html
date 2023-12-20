@@ -222,16 +222,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>kmeans <span class="op">=</span> KMeans(n_clusters<span class="op">=</span>k)</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>y_pred <span class="op">=</span> kmeans.fit_predict(data)</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_clusters(X, y<span class="op">=</span><span class="va">None</span>):</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    plt.scatter(X[:, <span class="dv">0</span>], X[:, <span class="dv">1</span>], c<span class="op">=</span>y, s<span class="op">=</span><span class="dv">1</span>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">"$x_1$"</span>)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="st">"$x_2$"</span>, rotation<span class="op">=</span><span class="dv">0</span>)</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>plot_clusters(data)</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>plt.gca().set_axisbelow(<span class="va">True</span>)</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># References: Geron</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> plot_clusters(X, y<span class="op">=</span><span class="va">None</span>):</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    plt.scatter(X[:, <span class="dv">0</span>], X[:, <span class="dv">1</span>], c<span class="op">=</span>y, s<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    plt.xlabel(<span class="st">"$x_1$"</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    plt.ylabel(<span class="st">"$x_2$"</span>, rotation<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">4</span>))</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>plot_clusters(data)</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>plt.gca().set_axisbelow(<span class="va">True</span>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>C:\Users\britn\AppData\Roaming\Python\Python38\site-packages\sklearn\datasets\_openml.py:1002: FutureWarning: The default value of `parser` will change from `'liac-arff'` to `'auto'` in 1.4. You can set `parser='auto'` to silence this warning. Therefore, an `ImportError` will be raised from 1.4 if the dataset is dense and pandas is not installed. Note that the pandas parser may return different data types. See the Notes Section in fetch_openml's API doc for details.
@@ -240,9 +241,10 @@ C:\Users\britn\AppData\Roaming\Python\Python38\site-packages\sklearn\cluster\_km
   super()._check_params_vs_input(X, default_n_init=10)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-2-output-2.png" class="img-fluid"></p>
+<p><img src="index_files/figure-html/cell-2-output-2.png" width="687" height="350"></p>
 </div>
 </div>
+<p>References: <span class="citation" data-cites="Geron">[@Geron]</span>, <span class="citation" data-cites="Fränti">[@Fränti]</span></p>
 <section id="advanatages-and-limitations" class="level4">
 <h4 class="anchored" data-anchor-id="advanatages-and-limitations">Advanatages and Limitations</h4>
 <p>The simplicity of K-means makes it efficient and capable of handling large datasets. It also scales well as the number of data points grows. However, there are some limitations. The algorithm is guaranteed to converge, but it might not converge to the right solution. The outcome is influenced by the centroids that were randomly chosen during the initialization step. Moreover, k-means does not behave very well when the clusters have varying sizes, different densities, or nonspherical shapes.</p>
@@ -318,9 +320,10 @@ C:\Users\britn\AppData\Roaming\Python\Python38\site-packages\sklearn\cluster\_km
 <span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-3-output-1.png" class="img-fluid"></p>
+<p><img src="index_files/figure-html/cell-3-output-1.png" width="836" height="312"></p>
 </div>
 </div>
+<p>References: <span class="citation" data-cites="Geron">[@Geron]</span></p>
 </section>
 <section id="improvements" class="level4">
 <h4 class="anchored" data-anchor-id="improvements">Improvements</h4>
@@ -355,7 +358,7 @@ C:\Users\britn\AppData\Roaming\Python\Python38\site-packages\sklearn\cluster\_km
   super()._check_params_vs_input(X, default_n_init=10)</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-4-output-2.png" class="img-fluid"></p>
+<p><img src="index_files/figure-html/cell-4-output-2.png" width="836" height="312"></p>
 </div>
 </div>
 </section>
@@ -369,11 +372,16 @@ C:\Users\britn\AppData\Roaming\Python\Python38\site-packages\sklearn\cluster\_km
 <section id="advanatages-and-limitations-1" class="level4">
 <h4 class="anchored" data-anchor-id="advanatages-and-limitations-1">Advanatages and Limitations</h4>
 <p>DBSCAN is capable of identifying any number of clusters of any shape, and it is not senistive to outliers. However, if the density varies significantly across the clusters, or if there’s no low-density region around the clusters, DBSCAN may struggle to identify the clusters. This algorithm also does not scale well to large datasets.</p>
+</section>
+</section>
+<section id="references" class="level3">
+<h3 class="anchored" data-anchor-id="references">References</h3>
+<p>Fränti, P and O Virmajoki. “S3.” OpenML, openml.org/search?type=data&amp;status=active&amp;sort=qualities.NumberOfNumericFeatures&amp;id=42112. Accessed 15 Dec.&nbsp;2023.</p>
+<p>Géron, Aurélien. Hands-on Machine Learning with Scikit-Learn, Keras, and Tensorflow: Concepts, Tools, and Techniques to Build Intelligent Systems. O’Reilly Media, 2022.</p>
 
 
 <!-- -->
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -963,11 +971,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb6-191"><a href="#cb6-191" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Advanatages and Limitations</span></span>
 <span id="cb6-192"><a href="#cb6-192" aria-hidden="true" tabindex="-1"></a>DBSCAN is capable of identifying any number of clusters of any shape, and it is not senistive to outliers. However, if the density varies significantly across the clusters, or if there’s no low-density region around the clusters, DBSCAN may struggle to identify the clusters. This algorithm also does not scale well to large datasets.</span>
 <span id="cb6-193"><a href="#cb6-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-194"><a href="#cb6-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-195"><a href="#cb6-195" aria-hidden="true" tabindex="-1"></a><span class="fu">### References</span></span>
-<span id="cb6-196"><a href="#cb6-196" aria-hidden="true" tabindex="-1"></a>Fränti , P, and O Virmajoki. “S3.” OpenML, openml.org/search?type=data<span class="dv">&amp;amp;</span>status=active<span class="dv">&amp;amp;</span>sort=qualities.NumberOfNumericFeatures<span class="dv">&amp;amp;</span>id=42112. Accessed 15 Dec. 2023. </span>
-<span id="cb6-197"><a href="#cb6-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-198"><a href="#cb6-198" aria-hidden="true" tabindex="-1"></a>Géron, Aurélien. Hands-on Machine Learning with Scikit-Learn, Keras, and Tensorflow: Concepts, Tools, and Techniques to Build Intelligent Systems. O’Reilly Media, 2022. </span>
+<span id="cb6-194"><a href="#cb6-194" aria-hidden="true" tabindex="-1"></a><span class="fu">### References</span></span>
+<span id="cb6-195"><a href="#cb6-195" aria-hidden="true" tabindex="-1"></a>Fränti, P and O Virmajoki. “S3.” OpenML, openml.org/search?type=data<span class="dv">&amp;amp;</span>status=active<span class="dv">&amp;amp;</span>sort=qualities.NumberOfNumericFeatures<span class="dv">&amp;amp;</span>id=42112. Accessed 15 Dec. 2023. </span>
+<span id="cb6-196"><a href="#cb6-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-197"><a href="#cb6-197" aria-hidden="true" tabindex="-1"></a>Géron, Aurélien. Hands-on Machine Learning with Scikit-Learn, Keras, and Tensorflow: Concepts, Tools, and Techniques to Build Intelligent Systems. O’Reilly Media, 2022. </span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
