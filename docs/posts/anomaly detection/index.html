@@ -221,10 +221,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   warn(</code></pre>
 </div>
 <div class="cell-output cell-output-display">
-<p><img src="index_files/figure-html/cell-2-output-2.png" width="600" height="404"></p>
+<p><img src="index_files/figure-html/cell-2-output-2.png" class="img-fluid"></p>
 </div>
 </div>
-<p>References: <span class="citation" data-cites="Fränti">[@Fränti]</span></p>
+<p>References: <span class="citation" data-cites="Fränti">[@Fränti, @Géron]</span></p>
 <p><strong>Fast-MCD (Minimum Covariance Determinant)</strong> This algorithm is useful for outlier detection, especially when trying to clean up a dataset. When the algorithm estimates the parameters of the Gaussian distribution, it ignores the instances that are most likely outlier, making it easier to identify them.</p>
 <p><strong>Isolation Forest</strong> This algorithm works well in high-dimensional datasets. It builds a random forest where each decision tree grows randomly. The datapoints gradually spread apart causing the anomalies to become isolated much fater than normal datapoints.</p>
 <p><strong>Local outlier factor (LOF)</strong> This algorithm compares the density of instances around a given instance to the density around its neighbors. An anomaly is often more isolated than its k-nearest neighbors.</p>
@@ -233,6 +233,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="references" class="level3">
 <h3 class="anchored" data-anchor-id="references">References</h3>
 <p>Fränti, P and O Virmajoki. “S3.” OpenML, openml.org/search?type=data&amp;status=active&amp;sort=qualities.NumberOfNumericFeatures&amp;id=42112. Accessed 15 Dec.&nbsp;2023.</p>
+<p>Géron, Aurélien. Hands-on Machine Learning with Scikit-Learn, Keras, and Tensorflow: Concepts, Tools, and Techniques to Build Intelligent Systems. O’Reilly Media, 2022.</p>
 
 
 <!-- -->
@@ -682,7 +683,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>plt.scatter(anomalies[:, <span class="dv">0</span>], anomalies[:, <span class="dv">1</span>], color<span class="op">=</span><span class="st">'r'</span>, marker<span class="op">=</span><span class="st">'*'</span>)</span>
 <span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
 <span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>References: <span class="co">[</span><span class="ot">@Fränti</span><span class="co">]</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>References: <span class="co">[</span><span class="ot">@Fränti, @Géron</span><span class="co">]</span></span>
 <span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>**Fast-MCD (Minimum Covariance Determinant)**</span>
 <span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>This algorithm is useful for outlier detection, especially when trying to clean up a dataset. When the algorithm estimates the parameters of the Gaussian distribution, it ignores the instances that are most likely outlier, making it easier to identify them.</span>
@@ -699,6 +700,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a><span class="fu">### References</span></span>
 <span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>Fränti, P and O Virmajoki. “S3.” OpenML, openml.org/search?type=data<span class="dv">&amp;amp;</span>status=active<span class="dv">&amp;amp;</span>sort=qualities.NumberOfNumericFeatures<span class="dv">&amp;amp;</span>id=42112. Accessed 15 Dec. 2023.</span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>Géron, Aurélien. Hands-on Machine Learning with Scikit-Learn, Keras, and Tensorflow: Concepts, Tools, and Techniques to Build Intelligent Systems. O’Reilly Media, 2022. </span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

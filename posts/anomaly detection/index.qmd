@@ -41,7 +41,7 @@ plt.scatter(data[:, 0], data[:, 1])
 plt.scatter(anomalies[:, 0], anomalies[:, 1], color='r', marker='*')
 plt.show()
 ```
-References: [@Fränti]
+References: [@Fränti, @Géron]
 
 **Fast-MCD (Minimum Covariance Determinant)**
 This algorithm is useful for outlier detection, especially when trying to clean up a dataset. When the algorithm estimates the parameters of the Gaussian distribution, it ignores the instances that are most likely outlier, making it easier to identify them.
@@ -58,3 +58,5 @@ This algorithm is works well for novelty detection. Novelty detection differs fr
 
 ### References
 Fränti, P and O Virmajoki. “S3.” OpenML, openml.org/search?type=data&amp;status=active&amp;sort=qualities.NumberOfNumericFeatures&amp;id=42112. Accessed 15 Dec. 2023.
+
+Géron, Aurélien. Hands-on Machine Learning with Scikit-Learn, Keras, and Tensorflow: Concepts, Tools, and Techniques to Build Intelligent Systems. O’Reilly Media, 2022. 
